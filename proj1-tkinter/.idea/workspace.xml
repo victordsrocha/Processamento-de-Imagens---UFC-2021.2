@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="47534f4b-7b8b-40e0-afb3-98fb29dee075" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/Processamento-de-Imagens---UFC-2021.2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/proj1-tkinter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/0_README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0304(a)(breast_digital_Xray).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0305(a)(DFT_no_log).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0307(a)(intensity_ramp).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0308(a)(fractured_spine).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0309(a)(washed_out_aerial_image).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0310(b)(washed_out_pollen_image).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0312(a)(kidney).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0314(a)(100-dollars).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0316(1)(top_left).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0316(2)(2nd_from_top).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0316(3)(third_from_top).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0316(4)(bottom_left).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0320(1)(top_left).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0320(2)(2nd_from_top).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0320(3)(third_from_top).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0320(4)(bottom_left).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0323(a)(mars_moon_phobos).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0326(a)(embedded_square_noisy_512).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0327(a)(tungsten_original).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0333(a)(test_pattern_blurring_orig).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0334(a)(hubble-original).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0335(a)(ckt_board_saltpep_prob_pt05).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0338(a)(blurry_moon).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0340(a)(dipxe_text).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0342(a)(contact_lens_original).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0343(a)(skeleton_orig).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0354(a)(einstein_orig).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cap3/Fig0359(a)(headCT_Vandy).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/cat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/louise.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/pusheen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/stinkbug.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dialog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_processing/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_processing/aula3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_processing/helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_processing/intensity_transformation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projeto1/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projeto1/.idea/projeto1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projeto1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projeto1/aula3/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projeto1/aula3/aula3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto1/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto1/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto1/.idea/trabalho1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto1/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto1/main.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="20f2GFyuQn9CFMSsSEiw1GsELfE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="aula3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="proj1-tkinter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/image_processing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/image_processing/aula3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dialog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="proj1-tkinter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dialog.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="proj1-tkinter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="slider" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="proj1-tkinter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/slider.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.aula3" />
+        <item itemvalue="Python.dialog" />
+        <item itemvalue="Python.slider" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="47534f4b-7b8b-40e0-afb3-98fb29dee075" name="Changes" comment="" />
+      <created>1636421226151</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636421226151</updated>
+      <workItem from="1636421228206" duration="158000" />
+      <workItem from="1636452307953" duration="23317000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/proj1_tkinter$slider.coverage" NAME="slider Coverage Results" MODIFIED="1636460929549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$dialog.coverage" NAME="dialog Coverage Results" MODIFIED="1636461339315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$aula3.coverage" NAME="aula3 Coverage Results" MODIFIED="1636502610174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1636505744423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
