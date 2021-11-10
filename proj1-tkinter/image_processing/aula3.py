@@ -76,8 +76,27 @@ def gray_histogram(int3d):
     plt.show()
 
 
+def gray_eq(int3d):
+    image = skimage.color.rgb2gray(int3d)
+    image = skimage.util.img_as_ubyte(image)
+
+    hist = np.histogram(image, bins=256, range=(0, 255))[0]
+    prob = hist / (int3d.shape[0] * int3d.shape[1])
+    prob_acc = np.zeros(256)
+    prob_acc[0] = prob[0]
+    for i in range(1, 256):
+        prob_acc[i] = prob_acc[i - 1] + prob[i]
+    prob_acc = 255 * prob_acc
+    image_map = np.round(prob_acc)
+    image_map = np.uint8(image_map)
+
+    new_image = np.vectorize(lambda x: image_map[x])(image)
+
+    return image_processing.helper.int1d_to_int3d(new_image)
+
+
 if __name__ == '__main__':
-    x = string_to_bin('Victor de Sousa Rocha')
-    print(x)
-    s = bin_to_string(x)
+    b = string_to_bin('Victor de Sousa Rocha')
+    print(b)
+    s = bin_to_string(b)
     print(s)

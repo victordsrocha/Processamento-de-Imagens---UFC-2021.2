@@ -51,6 +51,7 @@ class GUI(Frame):
         self.button_record_message = Button(self.container1, text='record message', command=self.record_message)
         self.button_read_message = Button(self.container1, text='read message', command=self.read_message)
         self.button_hist_gray = Button(self.container1, text='gray histogram', command=self.gray_hist)
+        self.button_eq_gray = Button(self.container1, text='gray eq', command=self.gray_eq)
 
         self.button_browse.pack(side=TOP, fill='x')
         self.button_save.pack(side=TOP, fill='x')
@@ -68,6 +69,7 @@ class GUI(Frame):
         self.button_record_message.pack(side=LEFT)
         self.button_read_message.pack(side=LEFT)
         self.button_hist_gray.pack(side=LEFT)
+        self.button_eq_gray.pack(side=LEFT)
 
         self.panel.pack(side=TOP, fill='y', expand=True)
         self.start()
@@ -197,6 +199,13 @@ class GUI(Frame):
 
     def gray_hist(self):
         image_processing.aula3.gray_histogram(self.img_array)
+
+    def gray_eq(self):
+        self.previous_img_array = self.img_array
+        self.img_array = image_processing.aula3.gray_eq(self.img_array)
+        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
+        self.panel.configure(image=self.img_tk)
+        self.panel.image = self.img_tk
 
 
 root = Tk()
