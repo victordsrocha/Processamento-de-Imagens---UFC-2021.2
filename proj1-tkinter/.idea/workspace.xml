@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47534f4b-7b8b-40e0-afb3-98fb29dee075" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/images/fortaleza.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/save_test/test1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/save_test/test2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/save_test/test3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nome_arquivo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_processing/intensity_transformation.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_processing/intensity_transformation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +156,7 @@
       <updated>1636421226151</updated>
       <workItem from="1636421228206" duration="158000" />
       <workItem from="1636452307953" duration="24148000" />
+      <workItem from="1636553280457" duration="2690000" />
     </task>
     <servers />
   </component>
@@ -174,10 +178,21 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/frame.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proj1_tkinter$slider.coverage" NAME="slider Coverage Results" MODIFIED="1636460929549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$dialog.coverage" NAME="dialog Coverage Results" MODIFIED="1636461339315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$aula3.coverage" NAME="aula3 Coverage Results" MODIFIED="1636502610174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
-    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1636506689184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1636557129834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

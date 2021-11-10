@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import image_processing.intensity_transformation
 from dialog import CustomDialog
 import image_processing.aula3
+import skimage.io
 
 
 class GUI(Frame):
@@ -36,6 +37,7 @@ class GUI(Frame):
         self.panel = Label(self.container_panel)
 
         self.button_browse = Button(self.container0, text='Browse', command=self.choose)
+        self.button_save = Button(self.container0, text='Save', command=self.save)
         self.button_restore = Button(self.container0, text='Restore', command=self.restore)
         self.button_undo = Button(self.container0, text='undo', command=self.undo)
         self.button_gray = Button(self.container1, text='gray', command=self.gray)
@@ -49,6 +51,7 @@ class GUI(Frame):
         self.button_read_message = Button(self.container1, text='read message', command=self.read_message)
 
         self.button_browse.pack(side=TOP, fill='x')
+        self.button_save.pack(side=TOP, fill='x')
         self.button_restore.pack(side=TOP, fill='x')
         self.button_undo.pack(side=TOP, fill='x')
         self.button_gray.pack(side=LEFT)
@@ -68,7 +71,7 @@ class GUI(Frame):
 
     def start(self):
         self.img_path = 'data/images/stinkbug.jpg'
-        self.img_array = plt.imread(self.img_path)
+        self.img_array = skimage.io.imread(fname=self.img_path)
         self.previous_img_array = self.img_array
         self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
         self.panel.configure(image=self.img_tk)
@@ -81,7 +84,7 @@ class GUI(Frame):
         ])
         if len(img_path) > 0:
             self.img_path = img_path
-            self.img_array = plt.imread(self.img_path)
+            self.img_array = skimage.io.imread(fname=self.img_path)
             self.previous_img_array = self.img_array
             self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
             self.panel.configure(image=self.img_tk)
@@ -89,8 +92,15 @@ class GUI(Frame):
         else:
             pass
 
+    def save(self):
+        img_path = filedialog.asksaveasfile(filetypes=[
+            ('image', '.jpg'),
+            ('image', '.bmp')
+        ])
+        skimage.io.imsave(fname=img_path.name, arr=self.img_array)
+
     def restore(self):
-        self.img_array = plt.imread(self.img_path)
+        self.img_array = skimage.io.imread(fname=self.img_path)
         self.previous_img_array = self.img_array
         self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
         self.panel.configure(image=self.img_tk)
