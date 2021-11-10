@@ -1,4 +1,7 @@
 import numpy as np
+import skimage.color
+import matplotlib.pyplot as plt
+import image_processing.helper
 
 
 def binary(int3d):
@@ -61,6 +64,16 @@ def bin_to_string(bits):
         character = bits[pos:pos + 8]
         string += chr(int(character, 2))
     return string
+
+
+def gray_histogram(int3d):
+    # https://datacarpentry.org/image-processing/05-creating-histograms/
+
+    image = skimage.color.rgb2gray(int3d)
+    image = skimage.util.img_as_ubyte(image)
+
+    plt.hist(image.flatten(), bins=256, range=(0, 255))
+    plt.show()
 
 
 if __name__ == '__main__':

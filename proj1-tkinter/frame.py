@@ -7,13 +7,14 @@ import image_processing.intensity_transformation
 from dialog import CustomDialog
 import image_processing.aula3
 import skimage.io
+import skimage.color
 
 
 class GUI(Frame):
 
     def __init__(self, master=None):
         Frame.__init__(self, master)
-        w, h = 950, 650
+        w, h = 1200, 650
         master.minsize(width=w, height=h)
         master.maxsize(width=w, height=h)
         self.pack()
@@ -49,6 +50,7 @@ class GUI(Frame):
         self.button_bit_plane = Button(self.container1, text='bit plane', command=self.bit_plane)
         self.button_record_message = Button(self.container1, text='record message', command=self.record_message)
         self.button_read_message = Button(self.container1, text='read message', command=self.read_message)
+        self.button_hist_gray = Button(self.container1, text='gray histogram', command=self.gray_hist)
 
         self.button_browse.pack(side=TOP, fill='x')
         self.button_save.pack(side=TOP, fill='x')
@@ -65,6 +67,7 @@ class GUI(Frame):
         self.button_bit_plane.pack(side=LEFT)
         self.button_record_message.pack(side=LEFT)
         self.button_read_message.pack(side=LEFT)
+        self.button_hist_gray.pack(side=LEFT)
 
         self.panel.pack(side=TOP, fill='y', expand=True)
         self.start()
@@ -191,6 +194,9 @@ class GUI(Frame):
         message = image_processing.aula3.read_message(self.img_array)
         print(r'{}'.format(message))
         messagebox.showinfo(title=r'message', message=message)
+
+    def gray_hist(self):
+        image_processing.aula3.gray_histogram(self.img_array)
 
 
 root = Tk()
