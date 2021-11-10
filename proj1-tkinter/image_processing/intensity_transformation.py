@@ -2,6 +2,17 @@ import numpy as np
 from image_processing.helper import *
 
 
+def gray(int3d):
+    float3d = int3d_to_float3d(int3d)
+    for line in float3d:
+        for pixel in line:
+            mean = (pixel[0] + pixel[1] + pixel[2]) / 3
+            pixel[0] = mean
+            pixel[1] = mean
+            pixel[2] = mean
+    return float3d_to_int3d(float3d)
+
+
 def negative(int3d):
     float3d = int3d_to_float3d(int3d)
     negative_array = 1.0 - float3d

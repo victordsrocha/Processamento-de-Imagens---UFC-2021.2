@@ -38,6 +38,7 @@ class GUI(Frame):
         self.button_browse = Button(self.container0, text='Browse', command=self.choose)
         self.button_restore = Button(self.container0, text='Restore', command=self.restore)
         self.button_undo = Button(self.container0, text='undo', command=self.undo)
+        self.button_gray = Button(self.container1, text='gray', command=self.gray)
         self.button_negative = Button(self.container1, text='Negative', command=self.negative)
         self.button_log = Button(self.container1, text='log', command=self.log_transformation)
         self.button_gama = Button(self.container1, text='gama', command=self.gama_transformation)
@@ -50,6 +51,7 @@ class GUI(Frame):
         self.button_browse.pack(side=TOP, fill='x')
         self.button_restore.pack(side=TOP, fill='x')
         self.button_undo.pack(side=TOP, fill='x')
+        self.button_gray.pack(side=LEFT)
         self.button_negative.pack(side=LEFT)
         self.button_log.pack(side=LEFT)
         self.button_gama.pack(side=LEFT)
@@ -98,6 +100,13 @@ class GUI(Frame):
         aux = self.img_array
         self.img_array = self.previous_img_array
         self.previous_img_array = aux
+        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
+        self.panel.configure(image=self.img_tk)
+        self.panel.image = self.img_tk
+
+    def gray(self):
+        self.previous_img_array = self.img_array
+        self.img_array = image_processing.intensity_transformation.gray(self.img_array)
         self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
         self.panel.configure(image=self.img_tk)
         self.panel.image = self.img_tk
