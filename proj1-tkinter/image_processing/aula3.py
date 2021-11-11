@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import image_processing.helper
 
 
-def binary(int3d):
-    int3d = np.vectorize(lambda x: 0 if x == 0 else 255)(int3d)
+def binary(int3d, threshold):
+    int3d = np.vectorize(lambda x: 0 if x < threshold else 255)(int3d)
     int3d = np.uint8(int3d)
     return int3d
 

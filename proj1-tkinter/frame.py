@@ -170,7 +170,9 @@ class GUI(Frame):
 
     def binary(self):
         self.previous_img_array = self.img_array
-        self.img_array = image_processing.aula3.binary(self.img_array)
+        value = CustomDialog(self, "threshold").show()
+        value = int(value)
+        self.img_array = image_processing.aula3.binary(self.img_array, value)
         self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
         self.panel.configure(image=self.img_tk)
         self.panel.image = self.img_tk
