@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import filedialog, messagebox
 from tkinter import ttk
+
+import numpy as np
 from PIL import Image, ImageTk
 import matplotlib.pyplot as plt
 import image_processing.intensity_transformation
@@ -19,6 +21,7 @@ class GUI(Frame):
         master.maxsize(width=w, height=h)
         self.pack()
 
+        self.kernel = None
         self.img_path = None
         self.img_array = None
         self.previous_img_array = None
@@ -29,18 +32,14 @@ class GUI(Frame):
 
         self.container1 = Frame(master)
         self.container1.pack(side=TOP, fill='y')
-        lbl2 = Label(self.container1, text='aula 2: ')
-        lbl2.pack(side=LEFT)
-
-        self.container_panel = Frame(master)
-        self.container_panel.pack(side=TOP, fill='y', expand=True)
-
-        self.panel = Label(self.container_panel)
+        lbl1 = Label(self.container1, text='aula 2: ')
+        lbl1.pack(side=LEFT)
 
         self.button_browse = Button(self.container0, text='Browse', command=self.choose)
         self.button_save = Button(self.container0, text='Save', command=self.save)
         self.button_restore = Button(self.container0, text='Restore', command=self.restore)
         self.button_undo = Button(self.container0, text='undo', command=self.undo)
+
         self.button_gray = Button(self.container1, text='gray', command=self.gray)
         self.button_negative = Button(self.container1, text='Negative', command=self.negative)
         self.button_log = Button(self.container1, text='log', command=self.log_transformation)
@@ -62,8 +61,8 @@ class GUI(Frame):
         self.button_log.pack(side=LEFT)
         self.button_gama.pack(side=LEFT)
         self.button_linear.pack(side=LEFT)
-        lbl3 = Label(self.container1, text='     aula 3: ')
-        lbl3.pack(side=LEFT)
+        lbl2 = Label(self.container1, text='     aula 3: ')
+        lbl2.pack(side=LEFT)
         self.button_binary.pack(side=LEFT)
         self.button_bit_plane.pack(side=LEFT)
         self.button_record_message.pack(side=LEFT)
@@ -71,7 +70,47 @@ class GUI(Frame):
         self.button_hist_gray.pack(side=LEFT)
         self.button_eq_gray.pack(side=LEFT)
 
+        self.container2 = Frame(master)
+        self.container2.pack(side=TOP, fill='y')
+        lbl2 = Label(self.container2, text='aula 4: ')
+        lbl2.pack(side=LEFT)
+        self.button_set_kernel = Button(self.container2, text='set kernel', command=self.update_kernel)
+        self.button_set_kernel.pack(side=LEFT)
+
+        self.container_panel = Frame(master)
+        self.container_panel.pack(side=LEFT, fill='y')
+        self.panel = Label(self.container_panel)
         self.panel.pack(side=TOP, fill='y', expand=True)
+
+        self.kernel_area = Frame(master)
+        self.kernel_area.pack(side=RIGHT, fill='y', expand=True)
+        self.update_kernel = Button(self.kernel_area, text='update kernel', command=self.update_kernel)
+        self.update_kernel.pack()
+        self.kernel_area_0 = Frame(self.kernel_area)
+        self.kernel_area_0.pack(side=TOP)
+        self.kernel_entry00 = Entry(self.kernel_area_0, width=3)
+        self.kernel_entry00.pack(side=LEFT)
+        self.kernel_entry01 = Entry(self.kernel_area_0, width=3)
+        self.kernel_entry01.pack(side=LEFT)
+        self.kernel_entry02 = Entry(self.kernel_area_0, width=3)
+        self.kernel_entry02.pack(side=LEFT)
+        self.kernel_area_1 = Frame(self.kernel_area)
+        self.kernel_area_1.pack(side=TOP)
+        self.kernel_entry10 = Entry(self.kernel_area_1, width=3)
+        self.kernel_entry10.pack(side=LEFT)
+        self.kernel_entry11 = Entry(self.kernel_area_1, width=3)
+        self.kernel_entry11.pack(side=LEFT)
+        self.kernel_entry12 = Entry(self.kernel_area_1, width=3)
+        self.kernel_entry12.pack(side=LEFT)
+        self.kernel_area_2 = Frame(self.kernel_area)
+        self.kernel_area_2.pack(side=TOP)
+        self.kernel_entry20 = Entry(self.kernel_area_2, width=3)
+        self.kernel_entry20.pack(side=LEFT)
+        self.kernel_entry21 = Entry(self.kernel_area_2, width=3)
+        self.kernel_entry21.pack(side=LEFT)
+        self.kernel_entry22 = Entry(self.kernel_area_2, width=3)
+        self.kernel_entry22.pack(side=LEFT)
+
         self.start()
 
     def start(self):
@@ -208,6 +247,18 @@ class GUI(Frame):
         self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
         self.panel.configure(image=self.img_tk)
         self.panel.image = self.img_tk
+
+    def update_kernel(self):
+        self.kernel = np.zeros(shape=(3, 3), dtype=int)
+        self.kernel[0][0] = int(self.kernel_entry00.get())
+        self.kernel[0][1] = int(self.kernel_entry01.get())
+        self.kernel[0][2] = int(self.kernel_entry02.get())
+        self.kernel[1][0] = int(self.kernel_entry10.get())
+        self.kernel[1][1] = int(self.kernel_entry11.get())
+        self.kernel[1][2] = int(self.kernel_entry12.get())
+        self.kernel[2][0] = int(self.kernel_entry20.get())
+        self.kernel[2][1] = int(self.kernel_entry21.get())
+        self.kernel[2][2] = int(self.kernel_entry22.get())
 
 
 root = Tk()

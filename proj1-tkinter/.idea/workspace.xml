@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47534f4b-7b8b-40e0-afb3-98fb29dee075" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/image_processing/kernel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/frame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image_processing/aula3.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_processing/aula3.py" afterDir="false" />
@@ -160,7 +161,7 @@
       <workItem from="1636452307953" duration="24148000" />
       <workItem from="1636553280457" duration="3887000" />
       <workItem from="1636583969219" duration="5390000" />
-      <workItem from="1636635797169" duration="397000" />
+      <workItem from="1636635797169" duration="4623000" />
     </task>
     <servers />
   </component>
@@ -186,9 +187,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/image_processing/intensity_transformation.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/frame.py</url>
+          <line>261</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -197,6 +198,6 @@
     <SUITE FILE_PATH="coverage/proj1_tkinter$slider.coverage" NAME="slider Coverage Results" MODIFIED="1636460929549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$dialog.coverage" NAME="dialog Coverage Results" MODIFIED="1636461339315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$aula3.coverage" NAME="aula3 Coverage Results" MODIFIED="1636502610174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
-    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1636636191385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1636640408660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

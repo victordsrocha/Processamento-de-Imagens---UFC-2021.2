@@ -5,7 +5,7 @@ import image_processing.helper
 
 
 def binary(int3d, threshold):
-    int3d = np.vectorize(lambda x: 0 if x < threshold else 255)(int3d)
+    int3d = np.vectorize(lambda x: 255 if x >= threshold else 0)(int3d)
     int3d = np.uint8(int3d)
     return int3d
 
