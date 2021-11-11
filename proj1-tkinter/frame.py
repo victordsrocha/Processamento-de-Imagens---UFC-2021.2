@@ -7,7 +7,8 @@ from PIL import Image, ImageTk
 import matplotlib.pyplot as plt
 import image_processing.intensity_transformation
 from dialog import CustomDialog
-import image_processing.aula3
+# import image_processing.aula3
+from image_processing import aula3, aula4
 import skimage.io
 import skimage.color
 
@@ -74,8 +75,8 @@ class GUI(Frame):
         self.container2.pack(side=TOP, fill='y')
         lbl2 = Label(self.container2, text='aula 4: ')
         lbl2.pack(side=LEFT)
-        self.button_set_kernel = Button(self.container2, text='set kernel', command=self.update_kernel)
-        self.button_set_kernel.pack(side=LEFT)
+        self.button_generic_filter = Button(self.container2, text='generic filter', command=self.generic_filter)
+        self.button_generic_filter.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -84,42 +85,52 @@ class GUI(Frame):
 
         self.kernel_area = Frame(master)
         self.kernel_area.pack(side=RIGHT, fill='y', expand=True)
-        self.update_kernel = Button(self.kernel_area, text='update kernel', command=self.update_kernel)
-        self.update_kernel.pack()
+        self.button_update_kernel = Button(self.kernel_area, text='update kernel', command=self.update_kernel)
+        self.button_update_kernel.pack()
         self.kernel_area_0 = Frame(self.kernel_area)
         self.kernel_area_0.pack(side=TOP)
         self.kernel_entry00 = Entry(self.kernel_area_0, width=3)
+        self.kernel_entry00.insert(END, '1')
         self.kernel_entry00.pack(side=LEFT)
         self.kernel_entry01 = Entry(self.kernel_area_0, width=3)
         self.kernel_entry01.pack(side=LEFT)
+        self.kernel_entry01.insert(END, '2')
         self.kernel_entry02 = Entry(self.kernel_area_0, width=3)
         self.kernel_entry02.pack(side=LEFT)
+        self.kernel_entry02.insert(END, '1')
         self.kernel_area_1 = Frame(self.kernel_area)
         self.kernel_area_1.pack(side=TOP)
         self.kernel_entry10 = Entry(self.kernel_area_1, width=3)
         self.kernel_entry10.pack(side=LEFT)
+        self.kernel_entry10.insert(END, '2')
         self.kernel_entry11 = Entry(self.kernel_area_1, width=3)
         self.kernel_entry11.pack(side=LEFT)
+        self.kernel_entry11.insert(END, '4')
         self.kernel_entry12 = Entry(self.kernel_area_1, width=3)
         self.kernel_entry12.pack(side=LEFT)
+        self.kernel_entry12.insert(END, '2')
         self.kernel_area_2 = Frame(self.kernel_area)
         self.kernel_area_2.pack(side=TOP)
         self.kernel_entry20 = Entry(self.kernel_area_2, width=3)
         self.kernel_entry20.pack(side=LEFT)
+        self.kernel_entry20.insert(END, '1')
         self.kernel_entry21 = Entry(self.kernel_area_2, width=3)
         self.kernel_entry21.pack(side=LEFT)
+        self.kernel_entry21.insert(END, '2')
         self.kernel_entry22 = Entry(self.kernel_area_2, width=3)
         self.kernel_entry22.pack(side=LEFT)
+        self.kernel_entry22.insert(END, '1')
 
         self.start()
 
     def start(self):
-        self.img_path = 'data/images/stinkbug.jpg'
+        self.img_path = 'data/cap3/breast_digital_Xray.jpg'
         self.img_array = skimage.io.imread(fname=self.img_path)
         self.previous_img_array = self.img_array
         self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
         self.panel.configure(image=self.img_tk)
         self.panel.image = self.img_tk
+        self.update_kernel()
 
     def choose(self):
         img_path = filedialog.askopenfilename(filetypes=[
@@ -249,16 +260,23 @@ class GUI(Frame):
         self.panel.image = self.img_tk
 
     def update_kernel(self):
-        self.kernel = np.zeros(shape=(3, 3), dtype=int)
-        self.kernel[0][0] = int(self.kernel_entry00.get())
-        self.kernel[0][1] = int(self.kernel_entry01.get())
-        self.kernel[0][2] = int(self.kernel_entry02.get())
-        self.kernel[1][0] = int(self.kernel_entry10.get())
-        self.kernel[1][1] = int(self.kernel_entry11.get())
-        self.kernel[1][2] = int(self.kernel_entry12.get())
-        self.kernel[2][0] = int(self.kernel_entry20.get())
-        self.kernel[2][1] = int(self.kernel_entry21.get())
-        self.kernel[2][2] = int(self.kernel_entry22.get())
+        self.kernel = np.zeros(shape=(3, 3))
+        self.kernel[0][0] = (float(self.kernel_entry00.get())) / 9
+        self.kernel[0][1] = (float(self.kernel_entry01.get())) / 9
+        self.kernel[0][2] = (float(self.kernel_entry02.get())) / 9
+        self.kernel[1][0] = (float(self.kernel_entry10.get())) / 9
+        self.kernel[1][1] = (float(self.kernel_entry11.get())) / 9
+        self.kernel[1][2] = (float(self.kernel_entry12.get())) / 9
+        self.kernel[2][0] = (float(self.kernel_entry20.get())) / 9
+        self.kernel[2][1] = (float(self.kernel_entry21.get())) / 9
+        self.kernel[2][2] = (float(self.kernel_entry22.get())) / 9
+
+    def generic_filter(self):
+        self.previous_img_array = self.img_array
+        self.img_array = aula4.generic_filter(self.img_array, self.kernel)
+        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
+        self.panel.configure(image=self.img_tk)
+        self.panel.image = self.img_tk
 
 
 root = Tk()
