@@ -5,75 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47534f4b-7b8b-40e0-afb3-98fb29dee075" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/cap3/100-dollars.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/Fig0314(a)(100-dollars).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/breast_digital_Xray.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0305(a)(DFT_no_log).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0307(a)(intensity_ramp).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0308(a)(fractured_spine).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0309(a)(washed_out_aerial_image).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0310(b)(washed_out_pollen_image).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0312(a)(kidney).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0314(a)(100-dollars).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0316(1)(top_left).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0316(2)(2nd_from_top).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0316(3)(third_from_top).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0316(4)(bottom_left).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0320(1)(top_left).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0320(2)(2nd_from_top).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0320(3)(third_from_top).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0320(4)(bottom_left).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0323(a)(mars_moon_phobos).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0326(a)(embedded_square_noisy_512).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0327(a)(tungsten_original).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0333(a)(test_pattern_blurring_orig).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0334(a)(hubble-original).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0335(a)(ckt_board_saltpep_prob_pt05).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0338(a)(blurry_moon).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0340(a)(dipxe_text).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0342(a)(contact_lens_original).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0343(a)(skeleton_orig).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0354(a)(einstein_orig).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap3/others/Fig0359(a)(headCT_Vandy).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image_processing/aula4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/test_images/img_test_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate_test_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/bean.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/0_README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0304(a)(breast_digital_Xray).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0305(a)(DFT_no_log).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0307(a)(intensity_ramp).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0308(a)(fractured_spine).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0309(a)(washed_out_aerial_image).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0310(b)(washed_out_pollen_image).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0312(a)(kidney).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0314(a)(100-dollars).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0316(1)(top_left).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0316(2)(2nd_from_top).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0316(3)(third_from_top).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0316(4)(bottom_left).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0320(1)(top_left).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0320(2)(2nd_from_top).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0320(3)(third_from_top).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0320(4)(bottom_left).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0323(a)(mars_moon_phobos).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0326(a)(embedded_square_noisy_512).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0327(a)(tungsten_original).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0333(a)(test_pattern_blurring_orig).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0334(a)(hubble-original).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0335(a)(ckt_board_saltpep_prob_pt05).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0338(a)(blurry_moon).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0340(a)(dipxe_text).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0342(a)(contact_lens_original).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0343(a)(skeleton_orig).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0354(a)(einstein_orig).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cap3/Fig0359(a)(headCT_Vandy).tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/cat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/fortaleza.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/hidden.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/louise.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/pusheen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/stinkbug.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_processing/aula4.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_processing/aula4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image_processing/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_processing/helper.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +52,10 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data/images" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/test_images" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="aula3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -154,6 +94,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dialog.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="generate_test_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="proj1-tkinter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/image_processing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_test_img.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -209,6 +171,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.generate_test_img" />
         <item itemvalue="Python.aula3" />
         <item itemvalue="Python.dialog" />
         <item itemvalue="Python.slider" />
@@ -227,7 +190,8 @@
       <workItem from="1636452307953" duration="24148000" />
       <workItem from="1636553280457" duration="3887000" />
       <workItem from="1636583969219" duration="5390000" />
-      <workItem from="1636635797169" duration="9145000" />
+      <workItem from="1636635797169" duration="13707000" />
+      <workItem from="1636676725370" duration="7945000" />
     </task>
     <servers />
   </component>
@@ -253,6 +217,7 @@
     <SUITE FILE_PATH="coverage/proj1_tkinter$slider.coverage" NAME="slider Coverage Results" MODIFIED="1636460929549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$dialog.coverage" NAME="dialog Coverage Results" MODIFIED="1636461339315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$aula3.coverage" NAME="aula3 Coverage Results" MODIFIED="1636502610174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
-    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1636644678386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$generate_test_img.coverage" NAME="generate_test_img Coverage Results" MODIFIED="1636676962833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1636762645722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

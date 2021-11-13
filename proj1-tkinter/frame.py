@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import filedialog, messagebox
 from tkinter import ttk
-
+import skimage.transform
 import numpy as np
 from PIL import Image, ImageTk
 import matplotlib.pyplot as plt
@@ -11,6 +11,7 @@ from dialog import CustomDialog
 from image_processing import aula3, aula4
 import skimage.io
 import skimage.color
+import image_processing.helper as helper
 
 
 class GUI(Frame):
@@ -94,7 +95,7 @@ class GUI(Frame):
         self.kernel_entry00.pack(side=LEFT)
         self.kernel_entry01 = Entry(self.kernel_area_0, width=3)
         self.kernel_entry01.pack(side=LEFT)
-        self.kernel_entry01.insert(END, '2')
+        self.kernel_entry01.insert(END, '1')
         self.kernel_entry02 = Entry(self.kernel_area_0, width=3)
         self.kernel_entry02.pack(side=LEFT)
         self.kernel_entry02.insert(END, '1')
@@ -102,13 +103,13 @@ class GUI(Frame):
         self.kernel_area_1.pack(side=TOP)
         self.kernel_entry10 = Entry(self.kernel_area_1, width=3)
         self.kernel_entry10.pack(side=LEFT)
-        self.kernel_entry10.insert(END, '2')
+        self.kernel_entry10.insert(END, '1')
         self.kernel_entry11 = Entry(self.kernel_area_1, width=3)
         self.kernel_entry11.pack(side=LEFT)
-        self.kernel_entry11.insert(END, '4')
+        self.kernel_entry11.insert(END, '1')
         self.kernel_entry12 = Entry(self.kernel_area_1, width=3)
         self.kernel_entry12.pack(side=LEFT)
-        self.kernel_entry12.insert(END, '2')
+        self.kernel_entry12.insert(END, '1')
         self.kernel_area_2 = Frame(self.kernel_area)
         self.kernel_area_2.pack(side=TOP)
         self.kernel_entry20 = Entry(self.kernel_area_2, width=3)
@@ -116,7 +117,7 @@ class GUI(Frame):
         self.kernel_entry20.insert(END, '1')
         self.kernel_entry21 = Entry(self.kernel_area_2, width=3)
         self.kernel_entry21.pack(side=LEFT)
-        self.kernel_entry21.insert(END, '2')
+        self.kernel_entry21.insert(END, '1')
         self.kernel_entry22 = Entry(self.kernel_area_2, width=3)
         self.kernel_entry22.pack(side=LEFT)
         self.kernel_entry22.insert(END, '1')
@@ -127,9 +128,7 @@ class GUI(Frame):
         self.img_path = 'data/cap3/breast_digital_Xray.jpg'
         self.img_array = skimage.io.imread(fname=self.img_path)
         self.previous_img_array = self.img_array
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
         self.update_kernel()
 
     def choose(self):
@@ -141,9 +140,7 @@ class GUI(Frame):
             self.img_path = img_path
             self.img_array = skimage.io.imread(fname=self.img_path)
             self.previous_img_array = self.img_array
-            self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-            self.panel.configure(image=self.img_tk)
-            self.panel.image = self.img_tk
+            self.show_image()
         else:
             pass
 
@@ -157,40 +154,30 @@ class GUI(Frame):
     def restore(self):
         self.img_array = skimage.io.imread(fname=self.img_path)
         self.previous_img_array = self.img_array
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def undo(self):
         aux = self.img_array
         self.img_array = self.previous_img_array
         self.previous_img_array = aux
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def gray(self):
         self.previous_img_array = self.img_array
         self.img_array = image_processing.intensity_transformation.gray(self.img_array)
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def negative(self):
         self.previous_img_array = self.img_array
         self.img_array = image_processing.intensity_transformation.negative(self.img_array)
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def log_transformation(self):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "c").show()
         value = float(value)
         self.img_array = image_processing.intensity_transformation.log_transformation(self.img_array, value)
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def gama_transformation(self):
         self.previous_img_array = self.img_array
@@ -200,9 +187,7 @@ class GUI(Frame):
         c = float(c)
         self.img_array = image_processing.intensity_transformation.gama_transformation(
             self.img_array, gama=gama, c=c)
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def linear_transformation(self):
         self.previous_img_array = self.img_array
@@ -214,35 +199,27 @@ class GUI(Frame):
             points.append((float(x), float(y)))
         self.img_array = image_processing.intensity_transformation.linear_transformation(
             self.img_array, points)
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def binary(self):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "threshold").show()
         value = int(value)
         self.img_array = image_processing.aula3.binary(self.img_array, value)
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def bit_plane(self):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "bit").show()
         value = int(value)
         self.img_array = image_processing.aula3.bit_plane(self.img_array, value)
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def record_message(self):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "message").show()
         self.img_array = image_processing.aula3.record_message(self.img_array, value)
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def read_message(self):
         message = image_processing.aula3.read_message(self.img_array)
@@ -255,26 +232,41 @@ class GUI(Frame):
     def gray_eq(self):
         self.previous_img_array = self.img_array
         self.img_array = image_processing.aula3.gray_eq(self.img_array)
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
-        self.panel.configure(image=self.img_tk)
-        self.panel.image = self.img_tk
+        self.show_image()
 
     def update_kernel(self):
         self.kernel = np.zeros(shape=(3, 3))
-        self.kernel[0][0] = (float(self.kernel_entry00.get())) / 9
-        self.kernel[0][1] = (float(self.kernel_entry01.get())) / 9
-        self.kernel[0][2] = (float(self.kernel_entry02.get())) / 9
-        self.kernel[1][0] = (float(self.kernel_entry10.get())) / 9
-        self.kernel[1][1] = (float(self.kernel_entry11.get())) / 9
-        self.kernel[1][2] = (float(self.kernel_entry12.get())) / 9
-        self.kernel[2][0] = (float(self.kernel_entry20.get())) / 9
-        self.kernel[2][1] = (float(self.kernel_entry21.get())) / 9
-        self.kernel[2][2] = (float(self.kernel_entry22.get())) / 9
+        self.kernel[0][0] = (float(self.kernel_entry00.get()))
+        self.kernel[0][1] = (float(self.kernel_entry01.get()))
+        self.kernel[0][2] = (float(self.kernel_entry02.get()))
+        self.kernel[1][0] = (float(self.kernel_entry10.get()))
+        self.kernel[1][1] = (float(self.kernel_entry11.get()))
+        self.kernel[1][2] = (float(self.kernel_entry12.get()))
+        self.kernel[2][0] = (float(self.kernel_entry20.get()))
+        self.kernel[2][1] = (float(self.kernel_entry21.get()))
+        self.kernel[2][2] = (float(self.kernel_entry22.get()))
 
     def generic_filter(self):
         self.previous_img_array = self.img_array
         self.img_array = aula4.generic_filter(self.img_array, self.kernel)
-        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(self.img_array))
+        self.show_image()
+
+    def show_image(self):
+        max_size = 500
+        height, width = self.img_array.shape
+        if height > max_size or width > max_size:
+            if height > width:
+                ratio = height / max_size
+            else:
+                ratio = width / max_size
+            new_height = height // ratio
+            new_width = width // ratio
+            image_rescaled = skimage.transform.resize(self.img_array, (new_height, new_width), anti_aliasing=True)
+            image_rescaled = helper.float1d_to_int1d(image_rescaled)
+            image_to_show = image_rescaled
+        else:
+            image_to_show = self.img_array
+        self.img_tk = ImageTk.PhotoImage(image=Image.fromarray(image_to_show))
         self.panel.configure(image=self.img_tk)
         self.panel.image = self.img_tk
 

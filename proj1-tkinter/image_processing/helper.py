@@ -13,6 +13,10 @@ def float1d_to_int1d(float1d):
     return np.uint8(float1d * 255)
 
 
+def int1d_to_float1d(int1d):
+    return int1d / 255
+
+
 def int1d_to_int3d(int1d):
     lines = int1d.shape[0]
     columns = int1d.shape[1]

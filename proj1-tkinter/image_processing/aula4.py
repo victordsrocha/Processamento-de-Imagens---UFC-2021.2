@@ -32,7 +32,7 @@ def region_of_interest(matrix: np.ndarray, roi_center: tuple[int, int], roi_shap
     return roi
 
 
-def generic_filter(int3d, kernel):
+def generic_filter2(int3d, kernel):
     image = skimage.color.rgb2gray(int3d)
     image_height, image_width = image.shape
 
@@ -47,3 +47,43 @@ def generic_filter(int3d, kernel):
     image = helper.normalize_data(image)
 
     return helper.float1d_to_int1d(image)
+
+
+def generic_filter(int1d, kernel):
+    def calc_roi(center):
+        new_roi = np.zeros((kernel_size, kernel_size))
+        x, y = 0, 0
+        for i in range(center[0] - delta, center[0] + delta + 1):
+            for j in range(center[1] - delta, center[1] + delta + 1):
+                new_roi[y][x] = expanded_image[i][j]
+                x += 1
+            x = 0
+            y += 1
+        return new_roi
+
+    new_image = helper.int1d_to_float1d(int1d)
+    image_height, image_width = new_image.shape
+
+    kernel_size = kernel.shape[0]
+
+    expanded_image = np.pad(new_image, kernel_size - 1, mode='constant')
+    new_expanded_image = expanded_image.copy()
+
+    delta = int(np.ceil(kernel_size / 2) - 1)
+
+    for lin in range(delta, new_expanded_image.shape[0] - delta):
+        for col in range(delta, new_expanded_image.shape[1] - delta):
+            roi = calc_roi((lin, col))
+            filtered_values = roi * kernel
+            new_pixel_value = filtered_values.sum()
+            new_expanded_image[lin][col] = new_pixel_value
+
+    new_expanded_image = new_expanded_image[
+                         kernel_size - 1: new_expanded_image.shape[0] - kernel_size + 1,
+                         kernel_size - 1: new_expanded_image.shape[1] - kernel_size + 1
+                         ]
+
+    # normalize
+    new_expanded_image = helper.normalize_data(new_expanded_image)
+
+    return helper.float1d_to_int1d(new_expanded_image)
