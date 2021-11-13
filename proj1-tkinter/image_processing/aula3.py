@@ -10,22 +10,21 @@ def binary(int3d, threshold):
     return int3d
 
 
-def bit_plane(int3d, pos_bit):
-    new_int3d = int3d.copy()
-    for line in new_int3d:
-        for pixel in line:
-            for channel in range(len(pixel)):
-                if pixel[channel] < pow(2, (pos_bit - 1)):
-                    pixel[channel] = 0
-                else:
-                    bin_color = bin(pixel[channel])
-                    positive_bit = bin_color[-pos_bit]
-                    bin_color_list = [char for char in bin_color]
-                    for i in range(2, len(bin_color_list)):
-                        bin_color_list[i] = '0'
-                    bin_color_list[-pos_bit] = positive_bit
-                    pixel[channel] = int(''.join(bin_color_list), 2)
-    return new_int3d
+def bit_plane(int1d, pos_bit):
+    new_int1d = int1d.copy()
+    for y in range(len(new_int1d)):
+        for x in range(len(new_int1d[0])):
+            if new_int1d[y][x] < pow(2, (pos_bit - 1)):
+                new_int1d[y][x] = 0
+            else:
+                bin_color = bin(new_int1d[y][x])
+                positive_bit = bin_color[-pos_bit]
+                bin_color_list = [char for char in bin_color]
+                for i in range(2, len(bin_color_list)):
+                    bin_color_list[i] = '0'
+                bin_color_list[-pos_bit] = positive_bit
+                new_int1d[y][x] = int(''.join(bin_color_list), 2)
+    return new_int1d
 
 
 def record_message(int3d, message):
