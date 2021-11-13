@@ -27,22 +27,22 @@ def bit_plane(int1d, pos_bit):
     return new_int1d
 
 
-def record_message(int3d, message):
-    recorded_int3d = int3d.copy()
+def record_message(int1d, message):
+    recorded_int3d = int1d.copy()
     bin_message = string_to_bin(message)
     for i in range(len(bin_message)):
-        color_value = recorded_int3d[0][i][0]
+        color_value = recorded_int3d[0][i]
         color_value_bin = list(np.binary_repr(int(color_value)))
         color_value_bin[-1] = bin_message[i]
         new_value = int(''.join(color_value_bin), 2)
-        recorded_int3d[0][i][0] = np.uint8(new_value)
+        recorded_int3d[0][i] = np.uint8(new_value)
     return recorded_int3d
 
 
-def read_message(int3d):
+def read_message(int1d):
     bits = ''
-    for i in range(len(int3d[0])):
-        color_value = int3d[0][i][0]
+    for i in range(len(int1d[0])):
+        color_value = int1d[0][i]
         lsb = np.binary_repr(int(color_value))[-1]
         bits += lsb
     message = bin_to_string(bits)
