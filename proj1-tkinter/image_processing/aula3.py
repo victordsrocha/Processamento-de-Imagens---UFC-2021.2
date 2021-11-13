@@ -65,22 +65,17 @@ def bin_to_string(bits):
     return string
 
 
-def gray_histogram(int3d):
+def gray_histogram(int1d):
     # https://datacarpentry.org/image-processing/05-creating-histograms/
 
-    image = skimage.color.rgb2gray(int3d)
-    image = skimage.util.img_as_ubyte(image)
-
-    plt.hist(image.flatten(), bins=256, range=(0, 255))
+    plt.hist(int1d.flatten(), bins=256, range=(0, 255))
     plt.show()
 
 
-def gray_eq(int3d):
-    image = skimage.color.rgb2gray(int3d)
-    image = skimage.util.img_as_ubyte(image)
-
+def gray_eq(int1d):
+    image = int1d.copy()
     hist = np.histogram(image, bins=256, range=(0, 255))[0]
-    prob = hist / (int3d.shape[0] * int3d.shape[1])
+    prob = hist / (int1d.shape[0] * int1d.shape[1])
     prob_acc = np.zeros(256)
     prob_acc[0] = prob[0]
     for i in range(1, 256):
@@ -91,7 +86,7 @@ def gray_eq(int3d):
 
     new_image = np.vectorize(lambda x: image_map[x])(image)
 
-    return image_processing.helper.int1d_to_int3d(new_image)
+    return new_image
 
 
 if __name__ == '__main__':
