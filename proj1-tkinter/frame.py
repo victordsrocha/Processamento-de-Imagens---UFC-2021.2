@@ -18,7 +18,7 @@ class GUI(Frame):
 
     def __init__(self, master=None):
         Frame.__init__(self, master)
-        w, h = 1200, 650
+        w, h = 1325, 680
         master.minsize(width=w, height=h)
         master.maxsize(width=w, height=h)
         self.pack()
@@ -93,6 +93,14 @@ class GUI(Frame):
         self.button_laplace_blend.pack(side=LEFT)
         self.button_high_boost = Button(self.container2, text='high boost', command=self.high_boost)
         self.button_high_boost.pack(side=LEFT)
+        lbl6 = Label(self.container2, text='aula 6: ')
+        lbl6.pack(side=LEFT)
+        self.button_sobel_x = Button(self.container2, text='sobel x', command=self.sobel_x)
+        self.button_sobel_x.pack(side=LEFT)
+        self.button_sobel_y = Button(self.container2, text='sobel y', command=self.sobel_y)
+        self.button_sobel_y.pack(side=LEFT)
+        self.button_sobel_mag = Button(self.container2, text='magnitude', command=self.sobel_magnitude)
+        self.button_sobel_mag.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -306,6 +314,21 @@ class GUI(Frame):
         kernel_size = CustomDialog(self, "kernel size").show()
         kernel_size = int(kernel_size)
         self.img_array = image_processing.aula4.high_boost(self.img_array, alpha=alpha, kernel_size=kernel_size)
+        self.show_image()
+
+    def sobel_x(self):
+        self.previous_img_array = self.img_array
+        self.img_array = image_processing.aula4.sobel_x(self.img_array)
+        self.show_image()
+
+    def sobel_y(self):
+        self.previous_img_array = self.img_array
+        self.img_array = image_processing.aula4.sobel_y(self.img_array)
+        self.show_image()
+
+    def sobel_magnitude(self):
+        self.previous_img_array = self.img_array
+        self.img_array = image_processing.aula4.sobel_magnitude(self.img_array)
         self.show_image()
 
     def show_image(self):

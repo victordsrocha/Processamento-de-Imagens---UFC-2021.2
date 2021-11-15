@@ -134,3 +134,44 @@ def high_boost(int1d, alpha, kernel_size):
     new_image = image + alpha * (image - filtered_image)
     new_image = np.clip(new_image, 0, 1)
     return helper.float1d_to_int1d(new_image)
+
+
+def sobel_x(int1d):
+    kernel = np.array([
+        [-1, 0, 1],
+        [-2, 0, 2],
+        [-1, 0, 1]
+    ])
+    image = helper.int1d_to_float1d(int1d)
+    filtered_image = apply_kernel(image, kernel, normalize='normalize')
+    return helper.float1d_to_int1d(filtered_image)
+
+
+def sobel_y(int1d):
+    kernel = np.array([
+        [-1, -2, -1],
+        [0, 0, 0],
+        [1, 2, 1]
+    ])
+    image = helper.int1d_to_float1d(int1d)
+    filtered_image = apply_kernel(image, kernel, normalize='normalize')
+    return helper.float1d_to_int1d(filtered_image)
+
+
+def sobel_magnitude(int1d):
+    sx = np.array([
+        [-1, 0, 1],
+        [-2, 0, 2],
+        [-1, 0, 1]
+    ])
+    sy = np.array([
+        [-1, -2, -1],
+        [0, 0, 0],
+        [1, 2, 1]
+    ])
+    image = helper.int1d_to_float1d(int1d)
+    sobel_x_image = apply_kernel(image, sx, normalize='clip')
+    sobel_y_image = apply_kernel(image, sy, normalize='clip')
+    magnitude_image = np.abs(sobel_x_image) + np.abs(sobel_y_image)
+    magnitude_image = np.clip(magnitude_image, 0, 1)
+    return helper.float1d_to_int1d(magnitude_image)
