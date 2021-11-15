@@ -63,7 +63,7 @@ class GUI(Frame):
         self.button_log.pack(side=LEFT)
         self.button_gama.pack(side=LEFT)
         self.button_linear.pack(side=LEFT)
-        lbl2 = Label(self.container1, text='     aula 3: ')
+        lbl2 = Label(self.container1, text='aula 3: ')
         lbl2.pack(side=LEFT)
         self.button_binary.pack(side=LEFT)
         self.button_bit_plane.pack(side=LEFT)
@@ -74,10 +74,25 @@ class GUI(Frame):
 
         self.container2 = Frame(master)
         self.container2.pack(side=TOP, fill='y')
-        lbl2 = Label(self.container2, text='aula 4: ')
-        lbl2.pack(side=LEFT)
+        lbl4 = Label(self.container2, text='aula 4: ')
+        lbl4.pack(side=LEFT)
         self.button_generic_filter = Button(self.container2, text='generic filter', command=self.generic_filter)
         self.button_generic_filter.pack(side=LEFT)
+        self.button_box_filter = Button(self.container2, text='box filter', command=self.box_filter)
+        self.button_box_filter.pack(side=LEFT)
+        self.button_gaussian_filter = Button(self.container2, text='gaussian filter', command=self.gaussian_filter)
+        self.button_gaussian_filter.pack(side=LEFT)
+        self.button_median = Button(self.container2, text='median filter', command=self.median_filter)
+        self.button_median.pack(side=LEFT)
+        lbl5 = Label(self.container2, text='aula 5: ')
+        lbl5.pack(side=LEFT)
+        self.button_laplace = Button(self.container2, text='laplacian filter', command=self.laplacian_filter)
+        self.button_laplace.pack(side=LEFT)
+        self.button_laplace_blend = Button(self.container2, text='laplacian filter blend',
+                                           command=self.laplacian_filter_blend)
+        self.button_laplace_blend.pack(side=LEFT)
+        self.button_high_boost = Button(self.container2, text='high boost', command=self.high_boost)
+        self.button_high_boost.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -249,6 +264,48 @@ class GUI(Frame):
     def generic_filter(self):
         self.previous_img_array = self.img_array
         self.img_array = aula4.generic_filter(self.img_array, self.kernel)
+        self.show_image()
+
+    def box_filter(self):
+        self.previous_img_array = self.img_array
+        value = CustomDialog(self, "kernel size").show()
+        value = int(value)
+        self.img_array = image_processing.aula4.box_filter(self.img_array, value)
+        self.show_image()
+
+    def gaussian_filter(self):
+        self.previous_img_array = self.img_array
+        value = CustomDialog(self, "kernel size").show()
+        value = int(value)
+        self.img_array = image_processing.aula4.gaussian_smoothing_filter(self.img_array, value)
+        self.show_image()
+
+    def median_filter(self):
+        self.previous_img_array = self.img_array
+        value = CustomDialog(self, "kernel size").show()
+        value = int(value)
+        self.img_array = image_processing.aula4.median_filter(self.img_array, value)
+        self.show_image()
+
+    def laplacian_filter(self):
+        self.previous_img_array = self.img_array
+        self.img_array = image_processing.aula4.laplacian_filter(self.img_array)
+        self.show_image()
+
+    def laplacian_filter_blend(self):
+        self.previous_img_array = self.img_array
+        alpha = CustomDialog(self, "alpha").show()
+        alpha = int(alpha)
+        self.img_array = image_processing.aula4.blend(self.img_array, alpha)
+        self.show_image()
+
+    def high_boost(self):
+        self.previous_img_array = self.img_array
+        alpha = CustomDialog(self, "alpha").show()
+        alpha = int(alpha)
+        kernel_size = CustomDialog(self, "kernel size").show()
+        kernel_size = int(kernel_size)
+        self.img_array = image_processing.aula4.high_boost(self.img_array, alpha=alpha, kernel_size=kernel_size)
         self.show_image()
 
     def show_image(self):
