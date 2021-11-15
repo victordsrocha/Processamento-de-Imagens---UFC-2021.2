@@ -1,14 +1,10 @@
 from tkinter import *
 from tkinter import filedialog, messagebox
-from tkinter import ttk
 import skimage.transform
 import numpy as np
 from PIL import Image, ImageTk
-import matplotlib.pyplot as plt
-import image_processing.intensity_transformation
 from dialog import CustomDialog
-# import image_processing.aula3
-from image_processing import aula3, aula4
+from image_processing import intensity_transformation, spatial_transformation
 import skimage.io
 import skimage.color
 import image_processing.helper as helper
@@ -187,19 +183,19 @@ class GUI(Frame):
 
     def gray(self):
         self.previous_img_array = self.img_array
-        self.img_array = image_processing.intensity_transformation.gray(self.img_array)
+        self.img_array = intensity_transformation.gray(self.img_array)
         self.show_image()
 
     def negative(self):
         self.previous_img_array = self.img_array
-        self.img_array = image_processing.intensity_transformation.negative(self.img_array)
+        self.img_array = intensity_transformation.negative(self.img_array)
         self.show_image()
 
     def log_transformation(self):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "c").show()
         value = float(value)
-        self.img_array = image_processing.intensity_transformation.log_transformation(self.img_array, value)
+        self.img_array = intensity_transformation.log_transformation(self.img_array, value)
         self.show_image()
 
     def gama_transformation(self):
@@ -208,7 +204,7 @@ class GUI(Frame):
         gama, c = dialog_return.split(';')
         gama = float(gama)
         c = float(c)
-        self.img_array = image_processing.intensity_transformation.gama_transformation(
+        self.img_array = intensity_transformation.gama_transformation(
             self.img_array, gama=gama, c=c)
         self.show_image()
 
@@ -220,7 +216,7 @@ class GUI(Frame):
         for point_str in points_str_list:
             x, y = point_str.split(',')
             points.append((float(x), float(y)))
-        self.img_array = image_processing.intensity_transformation.linear_transformation(
+        self.img_array = intensity_transformation.linear_transformation(
             self.img_array, points)
         self.show_image()
 
@@ -228,33 +224,33 @@ class GUI(Frame):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "threshold").show()
         value = int(value)
-        self.img_array = image_processing.aula3.binary(self.img_array, value)
+        self.img_array = intensity_transformation.binary(self.img_array, value)
         self.show_image()
 
     def bit_plane(self):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "bit").show()
         value = int(value)
-        self.img_array = image_processing.aula3.bit_plane(self.img_array, value)
+        self.img_array = intensity_transformation.bit_plane(self.img_array, value)
         self.show_image()
 
     def record_message(self):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "message").show()
-        self.img_array = image_processing.aula3.record_message(self.img_array, value)
+        self.img_array = intensity_transformation.record_message(self.img_array, value)
         self.show_image()
 
     def read_message(self):
-        message = image_processing.aula3.read_message(self.img_array)
+        message = intensity_transformation.read_message(self.img_array)
         print(r'{}'.format(message))
         messagebox.showinfo(title=r'message', message=message)
 
     def gray_hist(self):
-        image_processing.aula3.gray_histogram(self.img_array)
+        intensity_transformation.gray_histogram(self.img_array)
 
     def gray_eq(self):
         self.previous_img_array = self.img_array
-        self.img_array = image_processing.aula3.gray_eq(self.img_array)
+        self.img_array = intensity_transformation.gray_eq(self.img_array)
         self.show_image()
 
     def update_kernel(self):
@@ -271,40 +267,40 @@ class GUI(Frame):
 
     def generic_filter(self):
         self.previous_img_array = self.img_array
-        self.img_array = aula4.generic_filter(self.img_array, self.kernel)
+        self.img_array = spatial_transformation.generic_filter(self.img_array, self.kernel)
         self.show_image()
 
     def box_filter(self):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "kernel size").show()
         value = int(value)
-        self.img_array = image_processing.aula4.box_filter(self.img_array, value)
+        self.img_array = spatial_transformation.box_filter(self.img_array, value)
         self.show_image()
 
     def gaussian_filter(self):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "kernel size").show()
         value = int(value)
-        self.img_array = image_processing.aula4.gaussian_smoothing_filter(self.img_array, value)
+        self.img_array = spatial_transformation.gaussian_smoothing_filter(self.img_array, value)
         self.show_image()
 
     def median_filter(self):
         self.previous_img_array = self.img_array
         value = CustomDialog(self, "kernel size").show()
         value = int(value)
-        self.img_array = image_processing.aula4.median_filter(self.img_array, value)
+        self.img_array = spatial_transformation.median_filter(self.img_array, value)
         self.show_image()
 
     def laplacian_filter(self):
         self.previous_img_array = self.img_array
-        self.img_array = image_processing.aula4.laplacian_filter(self.img_array)
+        self.img_array = spatial_transformation.laplacian_filter(self.img_array)
         self.show_image()
 
     def laplacian_filter_blend(self):
         self.previous_img_array = self.img_array
         alpha = CustomDialog(self, "alpha").show()
         alpha = int(alpha)
-        self.img_array = image_processing.aula4.blend(self.img_array, alpha)
+        self.img_array = spatial_transformation.blend(self.img_array, alpha)
         self.show_image()
 
     def high_boost(self):
@@ -313,22 +309,22 @@ class GUI(Frame):
         alpha = int(alpha)
         kernel_size = CustomDialog(self, "kernel size").show()
         kernel_size = int(kernel_size)
-        self.img_array = image_processing.aula4.high_boost(self.img_array, alpha=alpha, kernel_size=kernel_size)
+        self.img_array = spatial_transformation.high_boost(self.img_array, alpha=alpha, kernel_size=kernel_size)
         self.show_image()
 
     def sobel_x(self):
         self.previous_img_array = self.img_array
-        self.img_array = image_processing.aula4.sobel_x(self.img_array)
+        self.img_array = spatial_transformation.sobel_x(self.img_array)
         self.show_image()
 
     def sobel_y(self):
         self.previous_img_array = self.img_array
-        self.img_array = image_processing.aula4.sobel_y(self.img_array)
+        self.img_array = spatial_transformation.sobel_y(self.img_array)
         self.show_image()
 
     def sobel_magnitude(self):
         self.previous_img_array = self.img_array
-        self.img_array = image_processing.aula4.sobel_magnitude(self.img_array)
+        self.img_array = spatial_transformation.sobel_magnitude(self.img_array)
         self.show_image()
 
     def show_image(self):
