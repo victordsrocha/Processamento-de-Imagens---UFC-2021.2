@@ -4,7 +4,7 @@ import skimage.transform
 import numpy as np
 from PIL import Image, ImageTk
 from dialog import CustomDialog
-from image_processing import intensity_transformation, spatial_transformation
+from image_processing import intensity_transformation, spatial_transformation, frequency
 import skimage.io
 import skimage.color
 import image_processing.helper as helper
@@ -97,6 +97,13 @@ class GUI(Frame):
         self.button_sobel_y.pack(side=LEFT)
         self.button_sobel_mag = Button(self.container2, text='magnitude', command=self.sobel_magnitude)
         self.button_sobel_mag.pack(side=LEFT)
+
+        self.container3 = Frame(master)
+        self.container3.pack(side=TOP, fill='y')
+        lbl7 = Label(self.container3, text='aula 7-9: ')
+        lbl7.pack(side=LEFT)
+        self.button_fourier = Button(self.container3, text='fast fourier', command=self.fast_fourier)
+        self.button_fourier.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -326,6 +333,9 @@ class GUI(Frame):
         self.previous_img_array = self.img_array
         self.img_array = spatial_transformation.sobel_magnitude(self.img_array)
         self.show_image()
+
+    def fast_fourier(self):
+        frequency.fast_fourier(self.img_array)
 
     def show_image(self):
         max_size = 500
