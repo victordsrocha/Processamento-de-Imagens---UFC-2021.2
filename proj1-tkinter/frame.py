@@ -179,8 +179,8 @@ class GUI(Frame):
         skimage.io.imsave(fname=img_path.name, arr=self.img_array)
 
     def restore(self):
-        self.img_array = skimage.io.imread(fname=self.img_path)
         self.previous_img_array = self.img_array
+        self.img_array = skimage.io.imread(fname=self.img_path)
         self.show_image()
 
     def undo(self):
