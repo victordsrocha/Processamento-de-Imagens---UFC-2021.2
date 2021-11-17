@@ -5,41 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47534f4b-7b8b-40e0-afb3-98fb29dee075" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/cap4/Fig0465(a)(cassini).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0417(a)(barbara).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0418(a)(ray_traced_bottle_original).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0419(a)(text_gaps_of_1_and_2_pixels).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0421(car_newsprint_sampled_at_75DPI).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0422(newspaper_shot_woman).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0424(a)(rectangle).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0425(a)(translated_rectangle).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0427(a)(woman).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0429(a)(blown_ic).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0431(d)(blown_ic_crop).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0432(a)(square_original).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0438(a)(bld_600by600).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0441(a)(characters_test_pattern).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0442(a)(characters_test_pattern).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0445(a)(characters_test_pattern).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0448(a)(characters_test_pattern).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0450(a)(woman_original).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0451(a)(satellite_original).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0457(a)(thumb_print).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0458(a)(blurry_moon).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0459(a)(orig_chest_xray).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0462(a)(PET_image).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0464(a)(car_75DPI_Moire).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/Fig0465(a)(cassini).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/FigP0421(left)(padded_image).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/FigP0421(right)(center-padded_image).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/FigP0433(left)(DIP_image).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/FigP0436(left)(hand_xray).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/others/FigP0438(left).tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cap4/satellite_original.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fourier_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image_processing/frequency.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cap4/cassini.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edit_image_dialog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edit_img.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_drawing.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cap4/Fig0465(a)(cassini).tif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_processing/frequency.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_processing/frequency.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,12 +55,34 @@
       <recent name="$PROJECT_DIR$/data/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data/test_images" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/data/test_images" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="aula3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="edit_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="proj1-tkinter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/edit_img.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="edit_window" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="proj1-tkinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -100,7 +95,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/image_processing/aula3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/edit_window.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,28 +118,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fourier_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="generate_test_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="proj1-tkinter" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/image_processing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_test_img.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -200,10 +173,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.edit_img" />
+        <item itemvalue="Python.edit_window" />
         <item itemvalue="Python.fourier_test" />
         <item itemvalue="Python.spatial_transformation" />
-        <item itemvalue="Python.generate_test_img" />
-        <item itemvalue="Python.aula3" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +198,7 @@
       <workItem from="1636986689058" duration="17717000" />
       <workItem from="1637023599700" duration="19000" />
       <workItem from="1637023771238" duration="63000" />
-      <workItem from="1637070403193" duration="3331000" />
+      <workItem from="1637070403193" duration="20741000" />
     </task>
     <servers />
   </component>
@@ -252,8 +225,10 @@
     <SUITE FILE_PATH="coverage/proj1_tkinter$aula4.coverage" NAME="aula4 Coverage Results" MODIFIED="1636924826537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$dialog.coverage" NAME="dialog Coverage Results" MODIFIED="1636461339315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$aula3.coverage" NAME="aula3 Coverage Results" MODIFIED="1636502610174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$edit_window.coverage" NAME="edit_window Coverage Results" MODIFIED="1637075235580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$edit_img.coverage" NAME="edit_img Coverage Results" MODIFIED="1637098406277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$generate_test_img.coverage" NAME="generate_test_img Coverage Results" MODIFIED="1636763224290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
-    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1637074383565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1637111078301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$fourier_test.coverage" NAME="fourier_test Coverage Results" MODIFIED="1637071566261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

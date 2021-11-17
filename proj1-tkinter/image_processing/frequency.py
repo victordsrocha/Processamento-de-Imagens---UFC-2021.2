@@ -14,15 +14,37 @@ https://towardsdatascience.com/fast-fourier-transform-937926e591cb
 
 from image_processing import helper
 import numpy as np
-from scipy.fft import fft2, fftshift
+from scipy.fft import fft2, fftshift, ifft2, ifftshift
 import matplotlib.pyplot as plt
 
 
 def fast_fourier(int1d):
     float1d = helper.int1d_to_float1d(int1d)
-    image_f = np.real(fftshift(fft2(float1d)))
-    image_f = np.clip(image_f, 0, 400)
-    color_map = plt.cm.get_cmap('Greys')
-    reversed_color_map = color_map.reversed()
-    plt.imshow(image_f, cmap=reversed_color_map)
-    plt.show()
+    itp = fft2(float1d)
+    itp = fftshift(itp)
+    itp_image = np.abs(itp)
+    itp_image = np.clip(itp_image, 0, 500)
+    itp_image = helper.normalize_data(itp_image)
+
+    # plt.imshow(itp_image, cmap='Greys')
+    # plt.show()
+
+    return helper.float1d_to_int1d(itp_image), itp
+    # plt.imshow(image_f, cmap='Greys')
+    # plt.show()
+
+
+def fast_fourier_inverse(int1d, itp):
+    float1d = helper.int1d_to_float1d(int1d)
+    itp = itp * float1d
+
+    # itp_image = np.abs(itp)
+    # itp_image = np.clip(itp_image, 0, 500)
+    # itp_image = helper.normalize_data(itp_image)
+    # plt.imshow(itp_image, cmap='Greys')
+    # plt.show()
+
+    itp = ifftshift(itp)
+    ip = np.real(ifft2(itp))
+    ip = np.clip(ip, 0, 1)
+    return helper.float1d_to_int1d(ip)

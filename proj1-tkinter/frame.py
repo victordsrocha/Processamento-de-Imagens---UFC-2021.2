@@ -4,6 +4,7 @@ import skimage.transform
 import numpy as np
 from PIL import Image, ImageTk
 from dialog import CustomDialog
+from edit_image_dialog import CanvasDialog
 from image_processing import intensity_transformation, spatial_transformation, frequency
 import skimage.io
 import skimage.color
@@ -335,7 +336,11 @@ class GUI(Frame):
         self.show_image()
 
     def fast_fourier(self):
-        frequency.fast_fourier(self.img_array)
+        self.previous_img_array = self.img_array
+        fourier_image, itp = frequency.fast_fourier(self.img_array)
+        edited_fourier_image = CanvasDialog(self, width=50, int1d=fourier_image).show()
+        self.img_array = frequency.fast_fourier_inverse(edited_fourier_image, itp)
+        self.show_image()
 
     def show_image(self):
         max_size = 500
