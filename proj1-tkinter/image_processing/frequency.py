@@ -18,12 +18,12 @@ from scipy.fft import fft2, fftshift, ifft2, ifftshift
 import matplotlib.pyplot as plt
 
 
-def fast_fourier(int1d):
+def fast_fourier(int1d, threshold):
     float1d = helper.int1d_to_float1d(int1d)
     itp = fft2(float1d)
     itp = fftshift(itp)
     itp_image = np.abs(itp)
-    itp_image = np.clip(itp_image, 0, 500)
+    itp_image = np.clip(itp_image, 0, threshold)
     itp_image = helper.normalize_data(itp_image)
 
     # plt.imshow(itp_image, cmap='Greys')
