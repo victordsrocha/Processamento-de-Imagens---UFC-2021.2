@@ -9,6 +9,7 @@ from image_processing import intensity_transformation, spatial_transformation, f
 import skimage.io
 import skimage.color
 import image_processing.helper as helper
+import matplotlib.pyplot as plt
 
 
 class GUI(Frame):
@@ -36,6 +37,7 @@ class GUI(Frame):
 
         self.button_browse = Button(self.container0, text='Browse', command=self.choose)
         self.button_save = Button(self.container0, text='Save', command=self.save)
+        self.button_pyplot = Button(self.container0, text='pyplot', command=self.show_pyplot)
         self.button_restore = Button(self.container0, text='Restore', command=self.restore)
         self.button_undo = Button(self.container0, text='undo', command=self.undo)
 
@@ -53,6 +55,7 @@ class GUI(Frame):
 
         self.button_browse.pack(side=TOP, fill='x')
         self.button_save.pack(side=TOP, fill='x')
+        self.button_pyplot.pack(side=TOP, fill='x')
         self.button_restore.pack(side=TOP, fill='x')
         self.button_undo.pack(side=TOP, fill='x')
         self.button_gray.pack(side=LEFT)
@@ -103,8 +106,10 @@ class GUI(Frame):
         self.container3.pack(side=TOP, fill='y')
         lbl7 = Label(self.container3, text='aula 7-9: ')
         lbl7.pack(side=LEFT)
-        self.button_fourier = Button(self.container3, text='fast fourier', command=self.fast_fourier)
+        self.button_fourier = Button(self.container3, text='fourier', command=self.fourier)
         self.button_fourier.pack(side=LEFT)
+        self.button_fast_fourier = Button(self.container3, text='fast fourier', command=self.fast_fourier)
+        self.button_fast_fourier.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -177,6 +182,10 @@ class GUI(Frame):
             ('image', '.bmp')
         ])
         skimage.io.imsave(fname=img_path.name, arr=self.img_array)
+
+    def show_pyplot(self):
+        plt.imshow(self.img_array, cmap='gray', vmin=0, vmax=255)
+        plt.show()
 
     def restore(self):
         self.previous_img_array = self.img_array
@@ -334,6 +343,11 @@ class GUI(Frame):
         self.previous_img_array = self.img_array
         self.img_array = spatial_transformation.sobel_magnitude(self.img_array)
         self.show_image()
+
+    def fourier(self):
+        threshold = CustomDialog(self, "threshold").show()
+        threshold = int(threshold)
+        frequency.fourier_discrete_transform(self.img_array, threshold)
 
     def fast_fourier(self):
         self.previous_img_array = self.img_array
