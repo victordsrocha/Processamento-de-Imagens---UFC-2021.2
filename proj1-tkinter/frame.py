@@ -110,6 +110,12 @@ class GUI(Frame):
         self.button_fourier.pack(side=LEFT)
         self.button_fast_fourier = Button(self.container3, text='fast fourier', command=self.fast_fourier)
         self.button_fast_fourier.pack(side=LEFT)
+        self.button_filtro_passa_alta = Button(self.container3, text='filtro passa alta',
+                                               command=self.filtro_passa_alta)
+        self.button_filtro_passa_alta.pack(side=LEFT)
+        self.button_filtro_passa_baixa = Button(self.container3, text='filtro passa baixa',
+                                                command=self.filtro_passa_baixa)
+        self.button_filtro_passa_baixa.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -354,8 +360,30 @@ class GUI(Frame):
         threshold = CustomDialog(self, "threshold").show()
         threshold = int(threshold)
         fourier_image, itp = frequency.fast_fourier(self.img_array, threshold)
-        edited_fourier_image = CanvasDialog(self, width=50, int1d=fourier_image).show()
-        self.img_array = frequency.fast_fourier_inverse(edited_fourier_image, itp)
+        edited_fourier_mask = CanvasDialog(self, width=50, int1d=fourier_image).show()
+        self.img_array = frequency.fast_fourier_inverse(edited_fourier_mask, itp)
+        self.show_image()
+
+    def filtro_passa_alta(self):
+        self.previous_img_array = self.img_array
+        threshold = CustomDialog(self, "threshold").show()
+        threshold = int(threshold)
+        ratio = CustomDialog(self, "ratio").show()
+        ratio = float(ratio)
+        gaussian = CustomDialog(self, "gaussian").show()
+        gaussian = bool(int(gaussian))
+        self.img_array = frequency.filtro_passa_alta(self.img_array, threshold, ratio, tipo='alta', gaussian=gaussian)
+        self.show_image()
+
+    def filtro_passa_baixa(self):
+        self.previous_img_array = self.img_array
+        threshold = CustomDialog(self, "threshold").show()
+        threshold = int(threshold)
+        ratio = CustomDialog(self, "ratio").show()
+        ratio = float(ratio)
+        gaussian = CustomDialog(self, "gaussian").show()
+        gaussian = bool(int(gaussian))
+        self.img_array = frequency.filtro_passa_alta(self.img_array, threshold, ratio, tipo='baixa', gaussian=gaussian)
         self.show_image()
 
     def show_image(self):
