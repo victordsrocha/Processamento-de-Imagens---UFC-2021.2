@@ -1,15 +1,16 @@
-from tkinter import *
-from tkinter import filedialog, messagebox
 import skimage.transform
 import numpy as np
-from PIL import Image, ImageTk
-from dialog import CustomDialog
-from edit_image_dialog import CanvasDialog
-from image_processing import intensity_transformation, spatial_transformation, frequency
 import skimage.io
 import skimage.color
 import image_processing.helper as helper
 import matplotlib.pyplot as plt
+from tkinter import *
+from tkinter import filedialog, messagebox
+from PIL import Image, ImageTk
+from dialog import CustomDialog
+from edit_image_dialog import CanvasDialog
+from image_processing import intensity_transformation, spatial_transformation, frequency, image_restoration, \
+    color_image_processing
 
 
 class GUI(Frame):
@@ -41,7 +42,6 @@ class GUI(Frame):
         self.button_restore = Button(self.container0, text='Restore', command=self.restore)
         self.button_undo = Button(self.container0, text='undo', command=self.undo)
 
-        self.button_gray = Button(self.container1, text='gray', command=self.gray)
         self.button_negative = Button(self.container1, text='Negative', command=self.negative)
         self.button_log = Button(self.container1, text='log', command=self.log_transformation)
         self.button_gama = Button(self.container1, text='gama', command=self.gama_transformation)
@@ -58,7 +58,6 @@ class GUI(Frame):
         self.button_pyplot.pack(side=TOP, fill='x')
         self.button_restore.pack(side=TOP, fill='x')
         self.button_undo.pack(side=TOP, fill='x')
-        self.button_gray.pack(side=LEFT)
         self.button_negative.pack(side=LEFT)
         self.button_log.pack(side=LEFT)
         self.button_gama.pack(side=LEFT)
@@ -110,12 +109,27 @@ class GUI(Frame):
         self.button_fourier.pack(side=LEFT)
         self.button_fast_fourier = Button(self.container3, text='fast fourier', command=self.fast_fourier)
         self.button_fast_fourier.pack(side=LEFT)
-        self.button_filtro_passa_alta = Button(self.container3, text='filtro passa alta',
-                                               command=self.filtro_passa_alta)
-        self.button_filtro_passa_alta.pack(side=LEFT)
-        self.button_filtro_passa_baixa = Button(self.container3, text='filtro passa baixa',
-                                                command=self.filtro_passa_baixa)
-        self.button_filtro_passa_baixa.pack(side=LEFT)
+        self.button_filtro_passa_rejeita = Button(self.container3, text='filtro passa/rejeita',
+                                                  command=self.filtro_passa_rejeita)
+        self.button_filtro_passa_rejeita.pack(side=LEFT)
+        lbl10 = Label(self.container3, text='aula 10: ')
+        lbl10.pack(side=LEFT)
+        self.button_media_geometrica = Button(self.container3, text='media geometrica', command=self.media_geometrica)
+        self.button_media_geometrica.pack(side=LEFT)
+        self.button_media_harmonica = Button(self.container3, text='media harmonica', command=self.media_harmonica)
+        self.button_media_harmonica.pack(side=LEFT)
+        self.button_media_contra_harmonica = Button(self.container3, text='media contra harmonica',
+                                                    command=self.media_contra_harmonica)
+        self.button_media_contra_harmonica.pack(side=LEFT)
+
+        self.container4 = Frame(master)
+        self.container4.pack(side=TOP, fill='y')
+        lbl11 = Label(self.container4, text='aula 11: ')
+        lbl11.pack(side=LEFT)
+        self.button_cinza = Button(self.container4, text='cinza', command=self.rgb_to_gray)
+        self.button_cinza.pack(side=LEFT)
+        self.button_cinza_octave = Button(self.container4, text='cinza ponderado', command=self.rgb_to_gray_weighted)
+        self.button_cinza_octave.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -163,7 +177,7 @@ class GUI(Frame):
         self.start()
 
     def start(self):
-        self.img_path = 'data/cap3/breast_digital_Xray.jpg'
+        self.img_path = 'data/test_images/reitoria.jpg'
         self.img_array = skimage.io.imread(fname=self.img_path)
         self.previous_img_array = self.img_array
         self.show_image()
@@ -202,11 +216,6 @@ class GUI(Frame):
         aux = self.img_array
         self.img_array = self.previous_img_array
         self.previous_img_array = aux
-        self.show_image()
-
-    def gray(self):
-        self.previous_img_array = self.img_array
-        self.img_array = intensity_transformation.gray(self.img_array)
         self.show_image()
 
     def negative(self):
@@ -364,31 +373,67 @@ class GUI(Frame):
         self.img_array = frequency.fast_fourier_inverse(edited_fourier_mask, itp)
         self.show_image()
 
-    def filtro_passa_alta(self):
+    def filtro_passa_rejeita(self):
         self.previous_img_array = self.img_array
         threshold = CustomDialog(self, "threshold").show()
         threshold = int(threshold)
-        ratio = CustomDialog(self, "ratio").show()
-        ratio = float(ratio)
-        gaussian = CustomDialog(self, "gaussian").show()
-        gaussian = bool(int(gaussian))
-        self.img_array = frequency.filtro_passa_alta(self.img_array, threshold, ratio, tipo='alta', gaussian=gaussian)
+        ratio1 = CustomDialog(self, "tamanho circulo").show()
+        ratio1 = float(ratio1)
+        tipo = CustomDialog(self, "tipo: alta, baixa, faixa alta, faixa baixa").show()
+        tipo = str(tipo)
+
+        ratio2 = None
+        gaussian = False
+        if tipo == 'alta' or tipo == 'baixa':
+            gaussian = CustomDialog(self, "gaussian").show()
+            gaussian = bool(int(gaussian))
+        else:
+            ratio2 = CustomDialog(self, "tamanho circulo interno").show()
+            ratio2 = float(ratio2)
+
+        self.img_array = frequency.filtro_passa_alta(self.img_array,
+                                                     threshold, ratio1,
+                                                     ratio2=ratio2,
+                                                     tipo=tipo,
+                                                     gaussian=gaussian)
         self.show_image()
 
-    def filtro_passa_baixa(self):
+    def media_geometrica(self):
         self.previous_img_array = self.img_array
-        threshold = CustomDialog(self, "threshold").show()
-        threshold = int(threshold)
-        ratio = CustomDialog(self, "ratio").show()
-        ratio = float(ratio)
-        gaussian = CustomDialog(self, "gaussian").show()
-        gaussian = bool(int(gaussian))
-        self.img_array = frequency.filtro_passa_alta(self.img_array, threshold, ratio, tipo='baixa', gaussian=gaussian)
+        value = CustomDialog(self, "kernel size").show()
+        value = int(value)
+        self.img_array = image_restoration.media_geometrica(self.img_array, value)
+        self.show_image()
+
+    def media_harmonica(self):
+        self.previous_img_array = self.img_array
+        value = CustomDialog(self, "kernel size").show()
+        value = int(value)
+        self.img_array = image_restoration.media_harmonica(self.img_array, value)
+        self.show_image()
+
+    def rgb_to_gray(self):
+        self.previous_img_array = self.img_array
+        self.img_array = color_image_processing.rgb_to_gray(self.img_array)
+        self.show_image()
+
+    def rgb_to_gray_weighted(self):
+        self.previous_img_array = self.img_array
+        self.img_array = color_image_processing.rgb_to_gray(self.img_array, weighted='octave')
+        self.show_image()
+
+    def media_contra_harmonica(self):
+        self.previous_img_array = self.img_array
+        value = CustomDialog(self, "kernel size").show()
+        value = int(value)
+        q_value = CustomDialog(self, "Q value").show()
+        q_value = int(value)
+        self.img_array = image_restoration.media_contra_harmonica(self.img_array, kernel_size=value, Q=q_value)
         self.show_image()
 
     def show_image(self):
         max_size = 500
-        height, width = self.img_array.shape
+        height, width = self.img_array.shape[0], self.img_array.shape[1]
         if height > max_size or width > max_size:
             if height > width:
                 ratio = height / max_size

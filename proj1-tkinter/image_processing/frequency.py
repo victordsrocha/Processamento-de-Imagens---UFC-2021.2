@@ -120,7 +120,7 @@ def fourier_discrete_transform(int1d, threshold):
     plt.show()
 
 
-def filtro_passa_alta(int1d, threshold, ratio, tipo='alta', gaussian=False):
+def filtro_passa_alta(int1d, threshold, ratio1, ratio2, tipo='alta', gaussian=False):
     float1d = helper.int1d_to_float1d(int1d)
     itp = fft2(float1d)
     itp = fftshift(itp)
@@ -129,12 +129,15 @@ def filtro_passa_alta(int1d, threshold, ratio, tipo='alta', gaussian=False):
     itp_image = np.clip(itp_image, 0, threshold)
     itp_image = helper.normalize_data(itp_image)
 
-    filter_mask = draw_circle(np.zeros(float1d.shape), ratio)  # fundo preto, circulo branco
+    filter_mask = draw_circle(np.zeros(float1d.shape), ratio1)  # fundo preto, circulo branco
+
+    if tipo == 'faixa alta':
+        filter_mask = draw_faixa(np.zeros(float1d.shape), ratio1, ratio2)
 
     if gaussian:
-        filter_mask = draw_gaussian_circle(filter_mask.shape, ratio)
+        filter_mask = draw_gaussian_circle(filter_mask.shape, ratio1)
 
-    if tipo == 'alta':
+    if tipo == 'alta' or tipo == 'faixa alta':
         filter_mask = 1 - filter_mask
 
     plt.imshow(filter_mask, cmap='gray')
@@ -156,6 +159,26 @@ def filtro_passa_alta(int1d, threshold, ratio, tipo='alta', gaussian=False):
     ip = np.real(ifft2(itp))
     ip = np.clip(ip, 0, 1)
     return helper.float1d_to_int1d(ip)
+
+
+def draw_faixa(fourier_image, ratio1, ratio2):
+    image = fourier_image.copy()
+    height, width = image.shape
+    circle_diameter = np.round(np.min([height, width]) * ratio1)
+    circle_ratio = circle_diameter / 2
+    for x in range(width):
+        for y in range(height):
+            if (x - width / 2) ** 2 + ((-y) + height / 2) ** 2 <= (circle_ratio ** 2):
+                image[y][x] = 1.0
+
+    circle_diameter = np.round(np.min([height, width]) * ratio2)
+    circle_ratio = circle_diameter / 2
+    for x in range(width):
+        for y in range(height):
+            if (x - width / 2) ** 2 + ((-y) + height / 2) ** 2 <= (circle_ratio ** 2):
+                image[y][x] = 0.0
+
+    return image
 
 
 def draw_circle(fourier_image, ratio):
@@ -216,34 +239,6 @@ def draw_gaussian_circle(image_shape, ratio):
     normalized_mask = helper.normalize_data(circle_gaussian_mask_correct_shape)
 
     return normalized_mask
-
-
-def draw_gaussian_circle2(circle_image):
-    # pesquisar como fazer um circulo gaussiano
-    # por enquanto estou somente suavizado de acordo com a distancia ao centro
-
-    def dist_center(point):
-        return math.dist(point, (0, 0))
-
-    image = circle_image.copy()
-    height, width = image.shape
-
-    alpha = 0.1
-
-    for x in range(width):
-        for y in range(height):
-            if image[y][x] != 0:
-                dist = dist_center((x - width / 2, (-y) + height / 2))
-                dist = dist * alpha
-                image[y][x] = image[y][x] / (1 + dist)
-                if image[y][x] > 1:
-                    image[y][x] = 1.0
-
-    plt.imshow(circle_image, cmap='gray')
-    plt.show()
-    plt.imshow(image, cmap='gray')
-    plt.show()
-    return image
 
 
 if __name__ == '__main__':
