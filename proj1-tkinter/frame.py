@@ -130,6 +130,10 @@ class GUI(Frame):
         self.button_cinza.pack(side=LEFT)
         self.button_cinza_octave = Button(self.container4, text='cinza ponderado', command=self.rgb_to_gray_weighted)
         self.button_cinza_octave.pack(side=LEFT)
+        lbl12 = Label(self.container4, text='aula 12: ')
+        lbl12.pack(side=LEFT)
+        self.button_chroma_key = Button(self.container4, text='chroma key', command=self.chroma_key)
+        self.button_chroma_key.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -420,6 +424,27 @@ class GUI(Frame):
     def rgb_to_gray_weighted(self):
         self.previous_img_array = self.img_array
         self.img_array = color_image_processing.rgb_to_gray(self.img_array, weighted='octave')
+        self.show_image()
+
+    def chroma_key(self):
+        self.previous_img_array = self.img_array
+
+        chroma_img_path = filedialog.askopenfilename(filetypes=[
+            ('image', '.jpg'),
+            ('image', '.bmp')
+        ])
+
+        chroma_img_array = None
+        if len(chroma_img_path) > 0:
+            chroma_img_array = skimage.io.imread(fname=chroma_img_path)
+            chroma_img_array = skimage.transform.resize(
+                chroma_img_array, (self.img_array.shape[0], self.img_array.shape[1]), anti_aliasing=True)
+        else:
+            pass
+
+        threshold = CustomDialog(self, "threshold [0,1.73]").show()
+        threshold = float(threshold)
+        self.img_array = color_image_processing.chroma_key(self.img_array, threshold, chroma_img_array)
         self.show_image()
 
     def media_contra_harmonica(self):

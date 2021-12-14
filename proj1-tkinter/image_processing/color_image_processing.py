@@ -4,6 +4,24 @@ import numpy as np
 from image_processing import helper
 
 
+def dist_euclid(color1, color2=np.array([0.0, 1.0, 0.0])):
+    dist = np.linalg.norm(color1 - color2)
+    return dist
+
+
+def chroma_key(rgb_int3d, threshold, chroma_img_array):
+    height, width = rgb_int3d.shape[0], rgb_int3d.shape[1]
+    rgb_float3d = helper.int3d_to_float3d(rgb_int3d)
+
+    for y in range(height):
+        for x in range(width):
+            dist_to_green = dist_euclid(rgb_float3d[y][x])
+            if dist_to_green < threshold:
+                rgb_float3d[y][x] = chroma_img_array[y][x]
+
+    return helper.float3d_to_int3d(rgb_float3d)
+
+
 def rgb_to_gray(rgb_int3d, weighted=None):
     height, width, colors = rgb_int3d.shape
     rgb_float3d = helper.int3d_to_float3d(rgb_int3d)
