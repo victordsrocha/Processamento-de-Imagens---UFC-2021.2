@@ -134,6 +134,8 @@ class GUI(Frame):
         lbl12.pack(side=LEFT)
         self.button_chroma_key = Button(self.container4, text='chroma key', command=self.chroma_key)
         self.button_chroma_key.pack(side=LEFT)
+        self.button_color_hist = Button(self.container4, text='histograma', command=self.color_hist)
+        self.button_color_hist.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -283,6 +285,9 @@ class GUI(Frame):
 
     def gray_hist(self):
         intensity_transformation.gray_histogram(self.img_array)
+
+    def color_hist(self):
+        color_image_processing.color_histogram(self.img_array)
 
     def gray_eq(self):
         self.previous_img_array = self.img_array

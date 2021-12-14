@@ -1,12 +1,25 @@
 import math
 import numpy as np
+import matplotlib.pyplot as plt
 
 from image_processing import helper
 
 
+def color_histogram(rgb_int3d):
+    hsv_image = rgb_to_hsv(rgb_int3d)
+
+    # https://datacarpentry.org/image-processing/05-creating-histograms/
+    fig, axs = plt.subplots(2, 2)
+    axs[0, 0].hist(rgb_int3d[:, :, 0].flatten(), bins=256, range=(0, 255), color='red')
+    axs[0, 1].hist(rgb_int3d[:, :, 1].flatten(), bins=256, range=(0, 255), color='green')
+    axs[1, 0].hist(rgb_int3d[:, :, 2].flatten(), bins=256, range=(0, 255), color='blue')
+    axs[1, 1].hist(hsv_image[:, :, 2].flatten(), bins=256, range=(0.0, 1.0), color='black')
+    plt.show()
+
+
 def dist_euclid(color1, color2=np.array([0.0, 1.0, 0.0])):
     dist = np.linalg.norm(color1 - color2)
-    return dist
+    return disthsv_image
 
 
 def chroma_key(rgb_int3d, threshold, chroma_img_array):
