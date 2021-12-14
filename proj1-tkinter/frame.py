@@ -136,6 +136,8 @@ class GUI(Frame):
         self.button_chroma_key.pack(side=LEFT)
         self.button_color_hist = Button(self.container4, text='histograma', command=self.color_hist)
         self.button_color_hist.pack(side=LEFT)
+        self.button_color_eq = Button(self.container4, text='equalização (hsv)', command=self.color_eq)
+        self.button_color_eq.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -292,6 +294,12 @@ class GUI(Frame):
     def gray_eq(self):
         self.previous_img_array = self.img_array
         self.img_array = intensity_transformation.gray_eq(self.img_array)
+        self.show_image()
+
+    def color_eq(self):
+        # Equalização
+        self.previous_img_array = self.img_array
+        self.img_array = color_image_processing.hsv_equalization(self.img_array)
         self.show_image()
 
     def update_kernel(self):

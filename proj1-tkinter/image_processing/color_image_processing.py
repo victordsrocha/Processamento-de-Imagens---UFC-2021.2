@@ -1,8 +1,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-
-from image_processing import helper
+from image_processing import helper, intensity_transformation
 
 
 def color_histogram(rgb_int3d):
@@ -17,9 +16,25 @@ def color_histogram(rgb_int3d):
     plt.show()
 
 
+def hsv_equalization(rgb_int3d):
+    hsv_image = rgb_to_hsv(rgb_int3d)
+    intensity_vector = hsv_image[:, :, 2]
+
+    int_intensity_vector = helper.float1d_to_int1d(intensity_vector)
+    eq_int_intensity_vector = intensity_transformation.gray_eq(int_intensity_vector)
+
+    eq_intensity_vector = helper.int1d_to_float1d(eq_int_intensity_vector)
+
+    hsv_image[:, :, 2] = eq_intensity_vector
+
+    rgb_float3d = hsv_to_rgb(hsv_image)
+    new_rgb_int3d = helper.float3d_to_int3d(rgb_float3d)
+    return new_rgb_int3d
+
+
 def dist_euclid(color1, color2=np.array([0.0, 1.0, 0.0])):
     dist = np.linalg.norm(color1 - color2)
-    return disthsv_image
+    return dist
 
 
 def chroma_key(rgb_int3d, threshold, chroma_img_array):
