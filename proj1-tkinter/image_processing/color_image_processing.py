@@ -31,6 +31,26 @@ def suavizacao_hsv(rgb_int3d, kernel_size):
     return new_rgb_int3d
 
 
+def laplace_hsv(rgb_int3d, alpha):
+    hsv_image = rgb_to_hsv(rgb_int3d)
+    intensity_matrix = hsv_image[:, :, 2]
+
+    kernel = np.array([
+        [1, 1, 1],
+        [1, -8, 1],
+        [1, 1, 1]
+    ])
+
+    filtered_intensity_matrix = spatial_transformation.apply_kernel(intensity_matrix, kernel, normalize='none')
+    blend_intensity_matrix = intensity_matrix * (1 - alpha * filtered_intensity_matrix)
+    blend_intensity_matrix = np.clip(blend_intensity_matrix, 0, 1)
+    hsv_image[:, :, 2] = blend_intensity_matrix
+
+    rgb_float3d = hsv_to_rgb(hsv_image)
+    new_rgb_int3d = helper.float3d_to_int3d(rgb_float3d)
+    return new_rgb_int3d
+
+
 def hsv_equalization(rgb_int3d):
     hsv_image = rgb_to_hsv(rgb_int3d)
     intensity_matrix = hsv_image[:, :, 2]

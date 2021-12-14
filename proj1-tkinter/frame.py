@@ -138,8 +138,10 @@ class GUI(Frame):
         self.button_color_hist.pack(side=LEFT)
         self.button_color_eq = Button(self.container4, text='equalização (hsv)', command=self.color_eq)
         self.button_color_eq.pack(side=LEFT)
-        self.button_suave_color = Button(self.container4, text='suavização (hsv)', command=self.suave_color)
+        self.button_suave_color = Button(self.container4, text='box filter hsv', command=self.suave_color)
         self.button_suave_color.pack(side=LEFT)
+        self.button_laplace_color = Button(self.container4, text='laplace filter hsv', command=self.laplace_color)
+        self.button_laplace_color.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -446,6 +448,13 @@ class GUI(Frame):
         value = CustomDialog(self, "kernel size").show()
         value = int(value)
         self.img_array = color_image_processing.suavizacao_hsv(self.img_array, kernel_size=value)
+        self.show_image()
+
+    def laplace_color(self):
+        self.previous_img_array = self.img_array
+        value = CustomDialog(self, "alpha").show()
+        value = float(value)
+        self.img_array = color_image_processing.laplace_hsv(self.img_array, alpha=value)
         self.show_image()
 
     def chroma_key(self):
