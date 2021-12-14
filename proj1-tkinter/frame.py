@@ -138,6 +138,8 @@ class GUI(Frame):
         self.button_color_hist.pack(side=LEFT)
         self.button_color_eq = Button(self.container4, text='equalização (hsv)', command=self.color_eq)
         self.button_color_eq.pack(side=LEFT)
+        self.button_suave_color = Button(self.container4, text='suavização (hsv)', command=self.suave_color)
+        self.button_suave_color.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -437,6 +439,13 @@ class GUI(Frame):
     def rgb_to_gray_weighted(self):
         self.previous_img_array = self.img_array
         self.img_array = color_image_processing.rgb_to_gray(self.img_array, weighted='octave')
+        self.show_image()
+
+    def suave_color(self):
+        self.previous_img_array = self.img_array
+        value = CustomDialog(self, "kernel size").show()
+        value = int(value)
+        self.img_array = color_image_processing.suavizacao_hsv(self.img_array, kernel_size=value)
         self.show_image()
 
     def chroma_key(self):

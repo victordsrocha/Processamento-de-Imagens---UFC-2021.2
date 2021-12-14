@@ -1,7 +1,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-from image_processing import helper, intensity_transformation
+from image_processing import helper, intensity_transformation, spatial_transformation
 
 
 def color_histogram(rgb_int3d):
@@ -16,11 +16,26 @@ def color_histogram(rgb_int3d):
     plt.show()
 
 
+def suavizacao_hsv(rgb_int3d, kernel_size):
+    hsv_image = rgb_to_hsv(rgb_int3d)
+    intensity_matrix = hsv_image[:, :, 2]
+
+    kernel = np.ones(shape=(kernel_size, kernel_size))
+    kernel = kernel / (kernel_size * kernel_size)
+
+    filtered_intensity_matrix = spatial_transformation.apply_kernel(intensity_matrix, kernel, normalize='normalize')
+    hsv_image[:, :, 2] = filtered_intensity_matrix
+
+    rgb_float3d = hsv_to_rgb(hsv_image)
+    new_rgb_int3d = helper.float3d_to_int3d(rgb_float3d)
+    return new_rgb_int3d
+
+
 def hsv_equalization(rgb_int3d):
     hsv_image = rgb_to_hsv(rgb_int3d)
-    intensity_vector = hsv_image[:, :, 2]
+    intensity_matrix = hsv_image[:, :, 2]
 
-    int_intensity_vector = helper.float1d_to_int1d(intensity_vector)
+    int_intensity_vector = helper.float1d_to_int1d(intensity_matrix)
     eq_int_intensity_vector = intensity_transformation.gray_eq(int_intensity_vector)
 
     eq_intensity_vector = helper.int1d_to_float1d(eq_int_intensity_vector)
