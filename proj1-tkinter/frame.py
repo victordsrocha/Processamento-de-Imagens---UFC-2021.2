@@ -130,6 +130,14 @@ class GUI(Frame):
         self.button_cinza.pack(side=LEFT)
         self.button_cinza_octave = Button(self.container4, text='cinza ponderado', command=self.rgb_to_gray_weighted)
         self.button_cinza_octave.pack(side=LEFT)
+        self.button_show_hsv = Button(self.container4, text='hsv', command=self.show_hsv)
+        self.button_show_hsv.pack(side=LEFT)
+        self.button_matiz = Button(self.container4, text='matiz', command=self.matiz)
+        self.button_matiz.pack(side=LEFT)
+        self.button_saturacao = Button(self.container4, text='saturacao', command=self.saturacao)
+        self.button_saturacao.pack(side=LEFT)
+        self.button_brilho = Button(self.container4, text='brilho', command=self.brilho)
+        self.button_brilho.pack(side=LEFT)
         lbl12 = Label(self.container4, text='aula 12: ')
         lbl12.pack(side=LEFT)
         self.button_chroma_key = Button(self.container4, text='chroma key', command=self.chroma_key)
@@ -142,6 +150,17 @@ class GUI(Frame):
         self.button_suave_color.pack(side=LEFT)
         self.button_laplace_color = Button(self.container4, text='laplace filter hsv', command=self.laplace_color)
         self.button_laplace_color.pack(side=LEFT)
+
+        self.container5 = Frame(master)
+        self.container5.pack(side=TOP, fill='y')
+        lbl13 = Label(self.container5, text='aula 13: ')
+        lbl13.pack(side=LEFT)
+        self.button_scale_rep = Button(self.container5, text='escala repetição', command=self.scale_repetition)
+        self.button_scale_rep.pack(side=LEFT)
+        self.button_scale = Button(self.container5, text='escala bilinear', command=self.linear_scale)
+        self.button_scale.pack(side=LEFT)
+        self.button_rotate = Button(self.container5, text='rotate', command=self.rotate)
+        self.button_rotate.pack(side=LEFT)
 
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
@@ -295,6 +314,9 @@ class GUI(Frame):
     def color_hist(self):
         color_image_processing.color_histogram(self.img_array)
 
+    def show_hsv(self):
+        color_image_processing.show_hsv(self.img_array)
+
     def gray_eq(self):
         self.previous_img_array = self.img_array
         self.img_array = intensity_transformation.gray_eq(self.img_array)
@@ -328,6 +350,27 @@ class GUI(Frame):
         value = CustomDialog(self, "kernel size").show()
         value = int(value)
         self.img_array = spatial_transformation.box_filter(self.img_array, value)
+        self.show_image()
+
+    def matiz(self):
+        self.previous_img_array = self.img_array
+        value = CustomDialog(self, "delta").show()
+        value = float(value)
+        self.img_array = color_image_processing.altera_matiz(self.img_array, value)
+        self.show_image()
+
+    def saturacao(self):
+        self.previous_img_array = self.img_array
+        value = CustomDialog(self, "delta").show()
+        value = float(value)
+        self.img_array = color_image_processing.altera_saturacao(self.img_array, value)
+        self.show_image()
+
+    def brilho(self):
+        self.previous_img_array = self.img_array
+        value = CustomDialog(self, "delta").show()
+        value = float(value)
+        self.img_array = color_image_processing.altera_brilho(self.img_array, value)
         self.show_image()
 
     def gaussian_filter(self):
@@ -485,6 +528,35 @@ class GUI(Frame):
         q_value = CustomDialog(self, "Q value").show()
         q_value = int(value)
         self.img_array = image_restoration.media_contra_harmonica(self.img_array, kernel_size=value, Q=q_value)
+        self.show_image()
+
+    def linear_scale(self):
+        self.previous_img_array = self.img_array
+        horizontal_scale = CustomDialog(self, "horizontal_scale").show()
+        horizontal_scale = float(horizontal_scale)
+        vertical_scale = CustomDialog(self, "vertical_scale").show()
+        vertical_scale = float(vertical_scale)
+        self.img_array = spatial_transformation.linear_scale(self.img_array,
+                                                             horizontal_scale=horizontal_scale,
+                                                             vertical_scale=vertical_scale)
+        self.show_image()
+
+    def rotate(self):
+        self.previous_img_array = self.img_array
+        angle = CustomDialog(self, "angle").show()
+        angle = float(angle)
+        self.img_array = spatial_transformation.rotate(self.img_array, angle)
+        self.show_image()
+
+    def scale_repetition(self):
+        self.previous_img_array = self.img_array
+        horizontal_scale = CustomDialog(self, "horizontal_scale").show()
+        horizontal_scale = float(horizontal_scale)
+        vertical_scale = CustomDialog(self, "vertical_scale").show()
+        vertical_scale = float(vertical_scale)
+        self.img_array = spatial_transformation.repetition_scale(self.img_array,
+                                                                 horizontal_scale=horizontal_scale,
+                                                                 vertical_scale=vertical_scale)
         self.show_image()
 
     def show_image(self):

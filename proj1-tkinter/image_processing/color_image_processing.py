@@ -16,6 +16,65 @@ def color_histogram(rgb_int3d):
     plt.show()
 
 
+def show_hsv(rgb_int3d):
+    hsv_image = rgb_to_hsv(rgb_int3d)
+
+    plt.imshow(hsv_image[:, :, 0], cmap='gray')
+    plt.show()
+    plt.imshow(hsv_image[:, :, 1], cmap='gray')
+    plt.show()
+    plt.imshow(hsv_image[:, :, 2], cmap='gray')
+    plt.show()
+
+
+def altera_matiz(rgb_int3d, delta):
+    hsv_image = rgb_to_hsv(rgb_int3d)
+    hsv_image[:, :, 0] = hsv_image[:, :, 0] + delta
+
+    for i in range(hsv_image.shape[0]):
+        for j in range(hsv_image.shape[1]):
+            if hsv_image[i, j, 0] > 1.0:
+                hsv_image[i, j, 0] = hsv_image[i, j, 0] - 1.0
+            elif hsv_image[i, j, 0] < 0.0:
+                hsv_image[i, j, 0] = 1.0 - hsv_image[i, j, 0]
+
+    rgb_float3d = hsv_to_rgb(hsv_image)
+    new_rgb_int3d = helper.float3d_to_int3d(rgb_float3d)
+    return new_rgb_int3d
+
+
+def altera_saturacao(rgb_int3d, delta):
+    hsv_image = rgb_to_hsv(rgb_int3d)
+    hsv_image[:, :, 1] = hsv_image[:, :, 1] + delta
+
+    for i in range(hsv_image.shape[0]):
+        for j in range(hsv_image.shape[1]):
+            if hsv_image[i, j, 1] > 1.0:
+                hsv_image[i, j, 1] = 1.0
+            elif hsv_image[i, j, 1] < 0.0:
+                hsv_image[i, j, 1] = 0.0
+
+    rgb_float3d = hsv_to_rgb(hsv_image)
+    new_rgb_int3d = helper.float3d_to_int3d(rgb_float3d)
+    return new_rgb_int3d
+
+
+def altera_brilho(rgb_int3d, delta):
+    hsv_image = rgb_to_hsv(rgb_int3d)
+    hsv_image[:, :, 2] = hsv_image[:, :, 2] + delta
+
+    for i in range(hsv_image.shape[0]):
+        for j in range(hsv_image.shape[1]):
+            if hsv_image[i, j, 2] > 1.0:
+                hsv_image[i, j, 2] = 1.0
+            elif hsv_image[i, j, 2] < 0.0:
+                hsv_image[i, j, 2] = 0.0
+
+    rgb_float3d = hsv_to_rgb(hsv_image)
+    new_rgb_int3d = helper.float3d_to_int3d(rgb_float3d)
+    return new_rgb_int3d
+
+
 def suavizacao_hsv(rgb_int3d, kernel_size):
     hsv_image = rgb_to_hsv(rgb_int3d)
     intensity_matrix = hsv_image[:, :, 2]
