@@ -5,11 +5,103 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47534f4b-7b8b-40e0-afb3-98fb29dee075" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/test_images/fourier_test.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/test_images/fourier_test_50.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/Fig0504(b)(rayleigh-noise).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/Fig0504(i)(salt-pepper-noise).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/Fig0505(a)(applo17_boulder_noisy).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/Fig0516(a)(applo17_boulder_noisy).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/Fig0516(c)(BW_banreject_order4).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/Fig0524(a)(impulse).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/Fig0524(b)(blurred-impulse).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/FigP0501(filtering).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/FigP0510(left).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/FigP0510(right).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/.comments/FigP0520(blurred-heart).tif.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0503 (original_pattern).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0504(a)(gaussian-noise).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0504(b)(rayleigh-noise).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0504(c)(gamma-noise).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0504(g)(neg-exp-noise).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0504(h)(uniform-noise).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0504(i)(salt-pepper-noise).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0505(a)(applo17_boulder_noisy).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0507(a)(ckt-board-orig).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0507(b)(ckt-board-gauss-var-400).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0508(a)(circuit-board-pepper-prob-pt1).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0508(b)(circuit-board-salt-prob-pt1).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0510(a)(ckt-board-saltpep-prob.pt05).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0512(a)(ckt-uniform-var-800).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0512(b)(ckt-uniform-plus-saltpepr-prob-pt1).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0513(a)(ckt_gaussian_var_1000_mean_0).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0514(a)(ckt_saltpep_prob_pt25).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0516(a)(applo17_boulder_noisy).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0516(c)(BW_banreject_order4).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0519(a)(florida_satellite_original).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0520(a)(NASA_Mariner6_Mars).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0524(a)(impulse).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0524(b)(blurred-impulse).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0525(a)(aerial_view_no_turb).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0525(b)(aerial_view_turb_c_0pt0025).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0525(c)(aerial_view_turb_c_0pt001).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0525(d)(aerial_view_turb_c_0pt00025).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0526(a)(original_DIP).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0529(a)(noisiest_var_pt1).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0529(d)(medium_noise_var_pt01).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0529(g)(least_noise_var_10minus37).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0533(a)(circle).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0534(a)(ellipse_and_circle).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0539(a)(vertical_rectangle).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/Fig0539(c)(shepp-logan_phantom).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/FigP0501(filtering).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/FigP0510(left).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/FigP0510(right).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/FigP0520(blurred-heart).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/FigP0528(a)(single_dot).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/FigP0528(b)(two_dots).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH05_Original_Images/FigP0528(c)(doughnut).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0608(RGB-full-color-cube).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0620(a)(picker_phantom).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0621(a)(weld-original).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0622(a)(tropical_rain_grayscale.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0624 (garments).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0627(a)(WashingtonDC Band3-RED).TIF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0627(b)(WashingtonDC Band2-GREEN).TIF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0627(c)(1)(WashingtonDC Band1-BLUE).TIF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0627(d)(WashingtonDC Band4).TIF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0628(a)(jupiter-moon.-Io).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0628(b)(jupiter-Io-closeup).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0630(01)(strawberries_fullcolor).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0631(a)(strawberries_coffee_full_color).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0635(bottom_left_stream).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0635(middle_row_left_chalk ).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0635(top_ left_flower).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0636(woman_baby_original).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0637(a)(caster_stand_original).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0638(a)(lenna_RGB).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0642(a)(jupiter_moon_original).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0645(a)(RGB1-red).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0645(b)(RGB1-green).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0645(c)(RGB1-blue).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0645(e)(RGB2_red).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0645(f)(RGB2_green).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0645(g)(RGB2_blue).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0646(a)(lenna_original_RGB).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0648(a)(lenna-noise-R-gauss-mean0-var800).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0648(b)(lenna-noise-G-gauss-mean0-var800).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0648(c)(lenna-noise-B-gauss-mean0-var800).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0650(a)(rgb_image_G_saltpep_pt05).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/Fig0651(a)(flower_no_compression).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DIP3E_CH06_Original_Images/DIP3E_Original_Images_CH06/FigP0606(color_bars).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Fig0504(a)(gaussian-noise).bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Fig0505(a)(applo17_boulder_noisy).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Fig0516(a)(applo17_boulder_noisy).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/astro505.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/astro505.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/astronauta.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cap3/Fig0333(a)(test_pattern_blurring_orig).bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cap4/Fig0421(car_newsprint_sampled_at_75DPI).tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cap4/car.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cap4/others/.comments/Fig0419(a)(text_gaps_of_1_and_2_pixels).tif.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_processing/frequency.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_processing/frequency.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +118,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="20f2GFyuQn9CFMSsSEiw1GsELfE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,7 +143,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -57,6 +160,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="color_image_processing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="proj1-tkinter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/image_processing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/image_processing/color_image_processing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="edit_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="proj1-tkinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,7 +204,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="edit_window" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="frequency" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="proj1-tkinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -92,29 +217,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/edit_window.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="fourier_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="proj1-tkinter" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fourier_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/image_processing/frequency.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,10 +273,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.edit_img" />
-        <item itemvalue="Python.edit_window" />
-        <item itemvalue="Python.fourier_test" />
         <item itemvalue="Python.spatial_transformation" />
+        <item itemvalue="Python.color_image_processing" />
+        <item itemvalue="Python.frequency" />
+        <item itemvalue="Python.edit_img" />
       </list>
     </recent_temporary>
   </component>
@@ -198,6 +301,12 @@
       <workItem from="1637070403193" duration="21937000" />
       <workItem from="1637149128517" duration="8736000" />
       <workItem from="1637180920988" duration="6190000" />
+      <workItem from="1639145661461" duration="20054000" />
+      <workItem from="1639266778627" duration="4697000" />
+      <workItem from="1639340841109" duration="4025000" />
+      <workItem from="1639399177536" duration="19473000" />
+      <workItem from="1639490366993" duration="19037000" />
+      <workItem from="1639656952964" duration="4609000" />
     </task>
     <servers />
   </component>
@@ -214,20 +323,22 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/proj1_tkinter$frequency.coverage" NAME="frequency Coverage Results" MODIFIED="1639186096869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$generate_test_img.coverage" NAME="generate_test_img Coverage Results" MODIFIED="1636763224290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$edit_img.coverage" NAME="edit_img Coverage Results" MODIFIED="1637098406277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$spatial_transformation.coverage" NAME="spatial_transformation Coverage Results" MODIFIED="1639532021244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$aula3.coverage" NAME="aula3 Coverage Results" MODIFIED="1636502610174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$fourier_test.coverage" NAME="fourier_test Coverage Results" MODIFIED="1637071566261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$edit_window.coverage" NAME="edit_window Coverage Results" MODIFIED="1637075235580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$color_image_processing.coverage" NAME="color_image_processing Coverage Results" MODIFIED="1639406304656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$slider.coverage" NAME="slider Coverage Results" MODIFIED="1636460929549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1639662145498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$aula4.coverage" NAME="aula4 Coverage Results" MODIFIED="1636924826537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
     <SUITE FILE_PATH="coverage/proj1_tkinter$dialog.coverage" NAME="dialog Coverage Results" MODIFIED="1636461339315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proj1_tkinter$aula3.coverage" NAME="aula3 Coverage Results" MODIFIED="1636502610174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
-    <SUITE FILE_PATH="coverage/proj1_tkinter$edit_window.coverage" NAME="edit_window Coverage Results" MODIFIED="1637075235580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
-    <SUITE FILE_PATH="coverage/proj1_tkinter$edit_img.coverage" NAME="edit_img Coverage Results" MODIFIED="1637098406277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proj1_tkinter$generate_test_img.coverage" NAME="generate_test_img Coverage Results" MODIFIED="1636763224290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image_processing" />
-    <SUITE FILE_PATH="coverage/proj1_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1637195061505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proj1_tkinter$fourier_test.coverage" NAME="fourier_test Coverage Results" MODIFIED="1637071566261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
