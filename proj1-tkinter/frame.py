@@ -10,7 +10,7 @@ from PIL import Image, ImageTk
 from dialog import CustomDialog
 from edit_image_dialog import CanvasDialog
 from image_processing import intensity_transformation, spatial_transformation, frequency, image_restoration, \
-    color_image_processing
+    color_image_processing, compress
 
 
 class GUI(Frame):
@@ -162,6 +162,17 @@ class GUI(Frame):
         self.button_rotate = Button(self.container5, text='rotate', command=self.rotate)
         self.button_rotate.pack(side=LEFT)
 
+        lbl14 = Label(self.container5, text=' / compressão: ')
+        lbl14.pack(side=LEFT)
+        self.button_compress1s = Button(self.container5, text='compactar simples', command=self.compress1)
+        self.button_compress1s.pack(side=LEFT)
+        self.button_descompactars = Button(self.container5, text='descompactar simples', command=self.descompactar)
+        self.button_descompactars.pack(side=LEFT)
+        self.button_compress1 = Button(self.container5, text='compactar', command=self.compress_completo)
+        self.button_compress1.pack(side=LEFT)
+        self.button_descompactar = Button(self.container5, text='descompactar', command=self.descompactar_completo)
+        self.button_descompactar.pack(side=LEFT)
+
         self.container_panel = Frame(master)
         self.container_panel.pack(side=LEFT, fill='y')
         self.panel = Label(self.container_panel)
@@ -208,7 +219,7 @@ class GUI(Frame):
         self.start()
 
     def start(self):
-        self.img_path = 'data/test_images/reitoria.jpg'
+        self.img_path = 'data/compress/benchmark.bmp'
         self.img_array = skimage.io.imread(fname=self.img_path)
         self.previous_img_array = self.img_array
         self.show_image()
@@ -557,6 +568,40 @@ class GUI(Frame):
         self.img_array = spatial_transformation.repetition_scale(self.img_array,
                                                                  horizontal_scale=horizontal_scale,
                                                                  vertical_scale=vertical_scale)
+        self.show_image()
+
+    def compress1(self):
+        delta = CustomDialog(self, "delta").show()
+        delta = int(delta)
+        h_values, s_values, v_values = compress.compactar_hsv(self.img_array, delta=delta)
+        np.save('/home/victor/code/Processamento-de-Imagens---UFC-2021.2/proj1-tkinter/data/compress/teste/h.npy',
+                h_values)
+        np.save('/home/victor/code/Processamento-de-Imagens---UFC-2021.2/proj1-tkinter/data/compress/teste/s.npy',
+                s_values)
+        np.save('/home/victor/code/Processamento-de-Imagens---UFC-2021.2/proj1-tkinter/data/compress/teste/v.npy',
+                v_values)
+
+    def compress_completo(self):
+        h_values, s_values, v_values = compress.compactacao_completa(self.img_array)
+        np.save('/home/victor/code/Processamento-de-Imagens---UFC-2021.2/proj1-tkinter/data/compress/teste/h.npy',
+                h_values)
+        np.save('/home/victor/code/Processamento-de-Imagens---UFC-2021.2/proj1-tkinter/data/compress/teste/s.npy',
+                s_values)
+        np.save('/home/victor/code/Processamento-de-Imagens---UFC-2021.2/proj1-tkinter/data/compress/teste/v.npy',
+                v_values)
+
+    def descompactar(self):
+        self.previous_img_array = self.img_array
+        self.img_array = compress.descompactar_hsv(
+            fname='/home/victor/code/Processamento-de-Imagens---UFC-2021.2/proj1-tkinter/data/compress/teste',
+        )
+        self.show_image()
+
+    def descompactar_completo(self):
+        self.previous_img_array = self.img_array
+        self.img_array = compress.descompactacao_completa(
+            fname='/home/victor/code/Processamento-de-Imagens---UFC-2021.2/proj1-tkinter/data/compress/teste',
+        )
         self.show_image()
 
     def show_image(self):
